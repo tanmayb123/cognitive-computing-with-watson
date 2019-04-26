@@ -1,0 +1,2810 @@
+<!DOCTYPE html>
+<!--[if lte IE 7]> <html lang="en" class="ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="ie ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<meta property="og:image" content="https://www.newstatesman.com/sites/default/files/styles/nodeimage/public/blogs_2018/01/gettyimages-521520676.jpg?itok=lrtghwcd" />
+<link rel="shortcut icon" href="https://www.newstatesman.com/sites/default/files/favicon_0.jpg" type="image/jpeg" />
+<link rel="apple-touch-icon" href="https://www.newstatesman.com/sites/all/modules/touch_icons/apple-touch-icon.png" type="image/png" />
+<meta name="viewport" content="width=device-width" />
+<link rel="amphtml" href="https://www.newstatesman.com/science-tech/space/2018/01/one-small-step-private-companies-how-future-space-travel-being-redefined?amp" />
+<meta name="description" content="There is a widening divide between “old space” – the domain of government agencies – and “new space”, which includes glamorous projects like rockets to Mars." />
+<meta name="abstract" content="There is a widening divide between “old space” – the domain of government agencies – and “new space”, which includes glamorous projects like rockets to Mars." />
+<meta name="robots" content="follow, index" />
+<meta name="keywords" content="New Statesman magazine, International Politics, British Politics, Britain, UK, Tony Blair, Gordon Brown, Geoffrey Robinson, David Cameron, Sir Menzies Campbell, Labour, Conservative, Liberal Democrat, UK Politics, House of Commons, House of Lords, Legislation, politics magazine" />
+<meta name="news_keywords" content="New Statesman magazine, International Politics, British Politics, Britain, UK, Tony Blair, Gordon Brown, Geoffrey Robinson, David Cameron, Sir Menzies Campbell, Labour, Conservative, Liberal Democrat, UK Politics, House of Commons, House of Lords, Legislation, politics magazin" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<meta name="rights" content="New Statesman Ltd" />
+<link rel="canonical" href="https://www.newstatesman.com/science-tech/space/2018/01/one-small-step-private-companies-how-future-space-travel-being-redefined" />
+<link rel="shortlink" href="https://www.newstatesman.com/node/311996" />
+<meta property="fb:pages" content="100959719644" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.newstatesman.com/science-tech/space/2018/01/one-small-step-private-companies-how-future-space-travel-being-redefined" />
+<meta property="og:title" content="One small step for private companies: how the future of space travel is being redefined" />
+<meta property="og:description" content="At 0100 GMT on Monday morning, Zuma, a satellite with a “secretive payload” was launched into orbit. The rocket launching it, Falcon 9, was created by SpaceX, the brainchild of irreverent tech billionare Elon Musk. The classified nature of its contents meant that the usual live feed that accompanies rocket launches was cut off after five minutes. The mission’s press release offered very little other detail. All that is known about Zuma is that it contains a satellite manufactured by company Northrop Gumman for the US government, and was in low-earth orbit, as most commercial spacecraft tends to be. However, it remains unclear which government agency will be controlling the satellite, and what purposes the information it collects will serve. SpaceX’s launch of Zuma is yet another sign that private companies are set to control the future of space exploration. In late January, SpaceX will be launching Falcon Heavy, the world’s most powerful operational rocket. Historically, space exploration has been the domain of the state. It was a way to assert national identity through exploring a new frontier, and the Soviet-American space race of the 1960s was as much about political dominance as it was about technical innovation. Once hurdles such as the limitations of computing power were surpassed, world powers began to invest significant amounts of money into exploring space. A recently released report from the US Academy of Natural Sciences emphasised the value of innovation in space exploration for its applications to problems on earth, such as farmers facing drought, a dynamic which will only become more pronounced in coming years.  But rates of technological advancement and decreasing costs of production have enabled private companies to move from manufacturing low-orbit satellites to rather improbably advertising commercial flight to Mars (on the Virgin Galactic aircraft VSS Unity). These kinds of changes are fairly unprecedented, but the last few years have demonstrated the ability of commercial entities to come up with completely novel ways to explore space.  A Financial Times article pointed out that pundits are increasingly seeing a split between “old space” – the domain of governments and well established contractors – and “new space”, which is where glamorous projects like SpaceX’s rockets to Mars reside.  David Baker, from the British Interplanetary Society, the oldest space advocacy organisation globally, said: “Space is about applications – such as communications, weather forecasting, TV, data relay, navigation, monitoring Earth’s resources – which are being increasingly handled by private companies, and exploration, which is the job of the big space agencies. “The total global space industry is worth around $400bn a year, of which only 22 per cent is run by governments, and the public and private are not necessarily in competition with each other. The amount of tax paid by the private space-related applications industries more than pays for the government programmes.” The government and the military have always enjoyed a favourable relationship with space exploration agencies, particularly in the USA. However, private spaceflight companies began to spring up as early as the 1980s, the first being Orbital Sciences, which already has a significant number of satellites and rockets in space in deals with Nasa. But companies like SpaceX and Blue Origin (headed by Amazon CEO Jeff Bezos) have made significant headway into space exploration more recently, even surpassing government innovation by miles. No state space agency has been able to reuse a rocket. By contrast, companies like Blue Origin and Space X have been able to do it so many times that it’s become a part of their business model. With the Zuma spacecraft, the first-stage booster rocket made a then unprecedented upright landing SpaceX’s Landing Zone 1 in Florida&#039;s Cape Canaveral in Decemeber 2015, in what is now a typical SpaceX manoeuvre. Since many of these companeis have stated that their priorities are making space travel accessible and affordable, re-using rockets will drive down costs significantly.  Moreover, rocket development in the US is in the hands of major corporations such as Boeing or Lockheed Martin, which did not see the value in spending research money on concepts such as “reusability”, which weren&#039;t considered essential to the development of their vehicles.  “As a government agency, Nasa is a conservative, no-risk organisation, accountable to the taxpayer and with a budget authorised by Congress each year,” Baker points out. &quot;With several billion dollars of private money at their disposal, entrepreneurs such as Elon Musk and Jeff Bezos were able to do what they do best - use their own money to take risk and employ bright engineers whose ideas had otherwise been constrained by the bureaucratic baggage.” Once the private space companies established themselves, they could however benefit from government money, in the form of contracts with Nasa to carry cargo to the International Space Station, and even, from 2019, to send astronauts from US soil.  Long-term government contracts are indeed lucrative, and have sustained organisations such as Orbital Sciences, the world&#039;s oldest private spaceflight company, Boeing and Lockheed Martin. Of course, the universe isn’t a free-for-all, and the private space companies also seem to be investing their hopes in space tourism. This is, however, hardly a novel idea: it was first proposed in 1968 after the first Apollo flight. Other recent money-making plans include developing asteroid mining for minerals (the US has already claimed legal ownership of any minerals found in space), or colonising space, which seems like the eventual aim of many of the private space corporations. SpaceX has established itself as a dominant player in space exploration, becoming the first commercial company to dock a spacecraft at the International Space Station in 2012.  The majority of these companies are American and headquartered in California. Despite being encouraged by the culture of technology and the Obama administration, they have been beleagured by setbacks. For example, Virgin Galactic hasn&#039;t competed a single flight with paying customers in low-earth orbit in the ten years since Branson publicised his ambitions.  But it&#039;s not all over for Nasa quite yet. The Wall Street Journal reported this week that US government and industry officials were given information to indicate that Zuma was a failure, further substantiating claims that Zuma was designated for espionage. However, Baker provided further technical clarification about the nature of the issue.  &quot;The total loss of the Zuma satellite was nothing to do with the SpaceX launch but rather the design of the adapter attaching the payload to the top of the rocket.This adapter is usually the responsibility of the company launching the rocket but because it was a highly secret satellite, it was Northrup Grumman&#039;s failure.&quot; Fundamentally, space has very few rules. Both space explorers and the people on earth who put them there are in uncharted waters, given the lack of legislation governing extra-terrestrial affairs. Does the concept of sovereign territory apply in space, like it does in international waters? Is a Kessler effect scenario – where the density of satellites above Earth grows so exponentially that a collision between any two will cause resulting debris to break apart every other satellite – more likely as the atmosphere becomes over-saturated?  Concerns about espionage and national security, a significant motivation for drawing a veil of secrecy over space exploration, take on cosmic dimensions in the relative lawlessness of space. A survey conducted in 2016 by the UK Department for Business and Trade Innovation highlighted the public&#039;s concerns around the relationship between the military and space, with one respondent recommending that companies “don’t put weapons up there”.  Of course, it can’t be all doom and gloom. Undoubtedly, the efforts of private space companies to bring spaceflight to the masses has caused an increase in public engagement with space – a domain reserved for the very well-trained few can now be perceived as a potential holiday destination. These advancements present completely new challenges for everyone involved, but similar discussions might have been had 100 years ago. Indeed, in the 1920s, as commercial air travel became more plausible, there were heated debates about whether it was actually as safe or as affordable as the companies advertised it to be. Now, people worry whether commercial space tourism will just end up being the playground of the extremely wealthy, and whether there are really any scientific benefits to be gained from vacations to the moon. Just as commercial aviation is now part and parcel of modern life, space travel could increasingly become just as normalised. As of now, Nasa too is throwing its weight behind big-picture, ambitious projects such as returning to the moon or sending humans to Mars. But this time, the US space agency will have company. “It&#039;s a true American story of entrepenurship and individual enterprise,” says Baker. “It&#039;s a win-win situation.”" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@NewStatesman" />
+<meta name="twitter:creator" content="@NewStatesman" />
+<meta name="twitter:creator:id" content="19906615" />
+<meta name="twitter:url" content="https://www.newstatesman.com/science-tech/space/2018/01/one-small-step-private-companies-how-future-space-travel-being-redefined" />
+<meta name="twitter:title" content="One small step for private companies: how the future of space travel" />
+<meta name="twitter:description" content="There is a widening divide between “old space” – the domain of government agencies – and “new space”, which includes glamorous projects like rockets to Mars." />
+<title>One small step for private companies: how the future of space travel is being redefined</title>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<script src="/sites/all/themes/creative-responsive-theme/js/vendor/modernizr.js"></script>
+<script>
+  var j = 1;
+</script>
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--<meta name="google-site-verification" content="-wzk9l4dBtL8YHJVF-afrZXha3QSFTKJvhfaoTyOL2Y" />--->
+
+<!--[if gt IE 9 | !IE ]><!-->
+            <link href="/sites/all/modules/paywall/assets/css/ev-widgets.min.css" rel="stylesheet">
+            <link href="/sites/all/modules/paywall/assets/css/prefixed-bootstrap.css" rel="stylesheet">
+            <script type="text/javascript" src="/sites/all/modules/paywall/assets/js/ev-widgets.min.js?ver=3.5.22"></script>
+            <script type="text/javascript" src="/sites/all/modules/paywall/assets/js/ev-em.min.js"></script>
+            <script type="text/javascript" src="/sites/all/modules/paywall/assets/js/ev-dab.min.js"></script>
+          <![endif]-->
+<!-- Online Advertising -->
+<script type="text/javascript">
+  window.streamampClientConfig = {targets: {"Category": "Science & Tech", "SubCategory": "Space"}};
+  window.AD_UNITS_TOGGLE_OFF = [];
+</script>
+
+
+<script type="text/javascript" src="//static.amp.services/clients/GlobalData/NewStatesman.js"></script>
+
+
+<script type="text/javascript" src="https://www.newstatesman.com/sites/default/files/js/js_vDrW3Ry_4gtSYaLsh77lWhWjIC6ml2QNkcfvfP5CVFs.js"></script>
+<script type="text/javascript" src="https://www.newstatesman.com/sites/default/files/js/js_obFUyTbqtcoGQtszVI46l1_oD927PzlDtlr_ilpYBqE.js"></script>
+<script type="text/javascript" src="https://www.newstatesman.com/sites/default/files/js/js_gZQ5qWcXh9Rvx1si1IfJ7HKd105dXMuvgPb8rxp_ors.js"></script>
+<script type="text/javascript" src="https://www.newstatesman.com/sites/default/files/js/js_yd4wiQx0bfvVFE4y_1g8YkP2S3paDW0mJOz7QTib-ko.js"></script>
+<script type="text/javascript" src="https://www.newstatesman.com/sites/default/files/js/js_BrZYhJ6Cz6-vaPzVf1_OfuIG5PqGoQNQc0S1fUe11FI.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"creative_responsive_theme","theme_token":"vzZEwFG3h64yqGkEo953tZDqSr0p8iYrN0tqzLjeooA","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/google_cse\/google_cse.js":1,"sites\/all\/modules\/NS_custom\/js\/custom-us.js":1,"sites\/all\/modules\/lazyloader\/jquery.lazyloader.js":1,"sites\/all\/modules\/cs_adaptive_image\/cs_adaptive_image.js":1,"sites\/all\/modules\/vscc\/js\/vscc.js":1,"sites\/all\/libraries\/jquery.cycle\/jquery.cycle.all.js":1,"sites\/all\/modules\/views_slideshow\/contrib\/views_slideshow_cycle\/js\/views_slideshow_cycle.js":1,"sites\/all\/themes\/creative-responsive-theme\/js\/custom.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/views_slideshow\/views_slideshow.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/NS_custom\/css\/custom.css":1,"sites\/all\/modules\/paywall\/assets\/css\/ev-custom.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/lazyloader\/lazyloader.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/default\/files\/sl_sprites.css":1,"sites\/all\/modules\/flippy\/flippy.css":1,"sites\/all\/modules\/vscc\/vscc.css":1,"sites\/all\/modules\/views_slideshow\/contrib\/views_slideshow_cycle\/views_slideshow_cycle.css":1,"sites\/all\/themes\/creative-responsive-theme\/style.css":1,"sites\/all\/themes\/creative-responsive-theme\/styles\/style-america.css":1}},"googleCSE":{"cx":"014587529549946006773:q0ke2unon2y","language":"en","resultsWidth":800,"domain":"www.google.com"},"custommodule":{"currentNid":"311996"},"better_exposed_filters":{"views":{"event_section":{"displays":{"event_featured_article":{"filters":[]}}},"related_book":{"displays":{"block":{"filters":[]}}},"ns_new_offers":{"displays":{"articlefooterspromo":{"filters":[]}}},"ns_offers_america":{"displays":{"articlefooterspromo":{"filters":[]}}},"spotlight_carousel_us":{"displays":{"block_2":{"filters":[]}}},"related_block":{"displays":{"block_2":{"filters":[]}}}}},"viewsSlideshow":{"spotlight_carousel_us-block_2":{"methods":{"goToSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"nextSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"pause":["viewsSlideshowControls","viewsSlideshowCycle"],"play":["viewsSlideshowControls","viewsSlideshowCycle"],"previousSlide":["viewsSlideshowPager","viewsSlideshowSlideCounter","viewsSlideshowCycle"],"transitionBegin":["viewsSlideshowPager","viewsSlideshowSlideCounter"],"transitionEnd":[]},"paused":0}},"viewsSlideshowControls":{"spotlight_carousel_us-block_2":{"top":{"type":"vsccControls"}}},"viewsSlideshowCycle":{"#views_slideshow_cycle_main_spotlight_carousel_us-block_2":{"num_divs":3,"id_prefix":"#views_slideshow_cycle_main_","div_prefix":"#views_slideshow_cycle_div_","vss_id":"spotlight_carousel_us-block_2","effect":"fade","transition_advanced":1,"timeout":5000,"speed":500,"delay":2000,"sync":1,"random":0,"pause":1,"pause_on_click":0,"action_advanced":1,"start_paused":0,"remember_slide":0,"remember_slide_days":1,"pause_in_middle":0,"pause_when_hidden":0,"pause_when_hidden_type":"full","amount_allowed_visible":"","nowrap":0,"fixed_height":1,"items_per_slide":1,"wait_for_image_load":1,"wait_for_image_load_timeout":3000,"cleartype":1,"cleartypenobg":1,"advanced_options":"{}"}},"urlIsAjaxTrusted":{"\/science-tech\/space\/2018\/01\/one-small-step-private-companies-how-future-space-travel-being-redefined":true}});
+//--><!]]>
+</script>
+ 
+<style type="text/css" media="all">
+@import url("https://www.newstatesman.com/modules/system/system.base.css?pnussu");
+@import url("https://www.newstatesman.com/modules/system/system.menus.css?pnussu");
+@import url("https://www.newstatesman.com/modules/system/system.messages.css?pnussu");
+@import url("https://www.newstatesman.com/modules/system/system.theme.css?pnussu");
+</style>
+<style type="text/css" media="screen">
+@import url("https://www.newstatesman.com/sites/all/modules/views_slideshow/views_slideshow.css?pnussu");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.newstatesman.com/sites/all/modules/date/date_api/date.css?pnussu");
+@import url("https://www.newstatesman.com/modules/field/theme/field.css?pnussu");
+@import url("https://www.newstatesman.com/modules/node/node.css?pnussu");
+@import url("https://www.newstatesman.com/sites/all/modules/NS_custom/css/custom.css?pnussu");
+@import url("https://www.newstatesman.com/sites/all/modules/paywall/assets/css/ev-custom.css?pnussu");
+@import url("https://www.newstatesman.com/modules/search/search.css?pnussu");
+@import url("https://www.newstatesman.com/modules/user/user.css?pnussu");
+@import url("https://www.newstatesman.com/sites/all/modules/views/css/views.css?pnussu");
+@import url("https://www.newstatesman.com/sites/all/modules/lazyloader/lazyloader.css?pnussu");
+@import url("https://www.newstatesman.com/sites/all/modules/ckeditor/css/ckeditor.css?pnussu");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.newstatesman.com/sites/all/modules/ctools/css/ctools.css?pnussu");
+@import url("https://www.newstatesman.com/sites/default/files/sl_sprites.css?pnussu");
+@import url("https://www.newstatesman.com/sites/all/modules/flippy/flippy.css?pnussu");
+@import url("https://www.newstatesman.com/sites/all/modules/vscc/vscc.css?pnussu");
+@import url("https://www.newstatesman.com/sites/all/modules/views_slideshow/contrib/views_slideshow_cycle/views_slideshow_cycle.css?pnussu");
+</style>
+<style type="text/css" media="all">
+@import url("https://www.newstatesman.com/sites/all/themes/creative-responsive-theme/style.css?pnussu");
+@import url("https://www.newstatesman.com/sites/all/themes/creative-responsive-theme/styles/style-america.css?pnussu");
+</style>
+
+
+<meta name="google-site-verification" content="GfOJMinBD7e8A_EFHIWacMNjU-AM1WaPrpnAVzwr7-4"/>
+<meta name="DCSext.WebsiteName" content="www.newstatesman.com" />
+
+
+<!-- Facebook Conversion Code for Checkouts - New Statesman 1 -->
+    <script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+    }
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', '6025943409225', {'value':'0.00','currency':'GBP'}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6025943409225&amp;cd[value]=0.00&amp;cd[currency]=GBP&amp;noscript=1" /></noscript>
+    
+    <!-- Facebook tracking pixel -->
+    <script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+    }
+    _fbq.push(['addPixelId', '526380280843209']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=526380280843209&amp;ev=PixelInitialized" /></noscript>
+    
+
+<!-- Facebook Conversion Code for New Statesman - MasterBrand Philips 2015 -->
+      <script>(function() {
+      var _fbq = window._fbq || (window._fbq = []);
+      if (!_fbq.loaded) {
+      var fbds = document.createElement('script');
+      fbds.async = true;
+      fbds.src = '//connect.facebook.net/en_US/fbds.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(fbds, s);
+      _fbq.loaded = true;
+      }
+      })();
+      window._fbq = window._fbq || [];
+      window._fbq.push(['track', '6032031760848', {'value':'0.00','currency':'GBP'}]);
+      </script>
+      <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6032031760848&amp;cd[value]=0.00&amp;cd[currency]=GBP&amp;noscript=1" /></noscript>
+<!-- end of Facebook Conversion Code- MasterBrand Philips 2015 -->
+
+
+<!-- OnScroll tag: New Statesman -->
+<script src="//tags.onscroll.com/3380db1e-7e02-4e5d-b02b-291ba90d3565/tag.min.js" async defer></script>
+
+<!-- Hotjar Tracking Code for www.newstatesman.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:899208,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+ <!-- On mouse hover sponsered artilce --->
+
+ <!-- On mouse hover sponsered artilce --->
+  
+
+<!--- Added Organization name and address for structure data elements ------>	
+	<script type="application/ld+json">
+	{
+	  "@context": "http://schema.org",
+	  "@type": "Organization",
+	  "url": "https://www.newstatesman.com/us",
+	  "name": "Newstatesman."
+	 
+     
+	}
+</script>
+<!--- End Organization name and address for structure data elements -->
+
+
+  
+</head>
+
+
+      <script>
+        EV.Core.init({
+            serviceName: "default",
+            realmName: "default_realm",
+            icDomain: "https://cmp.evolok.net/ic/api"
+        });
+
+        EV.Translate.addTranslationTable("en", {
+          "ev.widgets.errors.attribute_validation_failed": "Details are invalid. Please enter valid details",
+          "ev.widgets.errors.general_attributes": "Details are invalid. Please enter valid details",
+          "ev.widgets.errors.general_attribute": "Details are invalid. Please enter valid details",          
+          "ev.widgets.errors.forgot_password_success": "Password reset email sent",
+          "ev.widgets.errors.duplicate_user_profile": "Email already exits! Please use different email for signup",        
+          "ev.widgets.errors.undefined_order_id": "The order has not been created. Please enter valid billing address and delivery address.",  
+          "ev.widgets.errors.invalid_form": "Please enter valid profile details.",  
+          "ev.widgets.errors.identifiers_invalid": "The password you have entered is incorrect. Please re-enter your password, or click the forgot password button below to reset it.",
+          "ev.widgets.errors.identifier_value_empty": "Please enter a valid email address.",
+          "ev.widgets.errors.validators_value_empty": "Please enter a valid password.",
+          "ev.widgets.productProfile.submit" : "Click To Proceed",
+          "ev.widgets.productSelection.orderType.GIFT": "Tick this box if this is a gift"
+        });
+
+      EV.Translate.setActiveLanguage("en", true);
+
+        EV.Widgets = {};
+        EV.Widgets.Display = {};
+
+        EV.Em.init({
+            url: "https://cmp.evolok.net/acd/api/3.0",
+            sidCookieDomain: ".newstatesman.com",
+            meterHD: false
+        });
+
+        EV.Social.init({
+            icDomain: "https://cmp.evolok.net/evolok-idm-web/api",
+            serviceName: "default",
+            realmName: "default_realm",
+            redirectUri: "/my-account",
+            socialAttributeMapping: {
+                "email_address": "email",
+                "first_name": "firstName",
+                "last_name": "lastName"
+            },
+            socialKeys: {
+                facebook   : "296323097570420",
+                google   : "733730641858-49sls9g1ol0ko0sv6eihg9gqhtrh6v7o.apps.googleusercontent.com",
+            }
+        });
+
+        EV.Event.init();
+
+        EV.PM.init({
+            pmDomain: "https://cmp.evolok.net/pm/api/v2",
+            version: 2,
+            stripeKey: "pk_live_iGYXuxWCb49iOFMJ7G4F86Yy",
+            skipSummary: false,
+            skipProfile: false,
+            skipValidation: false,
+            skipSessionCreation: false,
+            skipLogin: false
+        });
+
+
+        var TNS_Data = {};
+
+        TNS_Data.countries = [];
+
+        EV.Widgets.Display = {
+                "newsletterSpecialOffers": {
+                    "type": "checkbox",
+                    "values": {"true": {"caption": "Send me exclusive offers from the New Statesman", "id": "true"} }
+                },
+                "newsletterWeeklyHighlights": {
+                    "type": "checkbox",
+                    "values": {"true": {"caption": "Send me the editor's Weekly Highlights email", "id": "true"} }
+                },
+                "NewStatesman_The_Morning_Call_by_Stephen_Bush": {
+                    "type": "checkbox",
+                    "values": {"true": {"caption": "Send me the Morning Call email from Stephen Bush", "id": "true"} }
+                },
+                "delivery_address": {
+                    "type": "label",
+                    "values": [
+                      { "caption": "Delivery Address", "value": "Delivery Address" }
+                    ]
+                },
+
+                country : {
+                  type: "dropdown",
+                  values: TNS_Data.countries
+                }
+            };
+
+        TNS_Data.auth = {};
+
+        // EV.Dab.init();
+
+      </script>
+<!--- Evlolok init ENDS -->
+
+<!--Twitter conversion tracking pixel for philips -->
+
+<script src="https://platform.twitter.com/oct.js" type="text/javascript"></script>
+<script type="text/javascript">twttr.conversion.trackPid('ntow3', { tw_sale_amount: 0, tw_order_quantity: 0 });</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=ntow3&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+<img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=ntow3&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+</noscript>
+
+<!-- End of Twitter conversion tracking pixel for philips -->
+
+
+
+
+
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-311996 node-type-blogs page-america article-theme " >
+ 
+ 
+<div class="tns-modal-wrapper"><div class="tns-modal tns-modal--login"><a><span class="ev-nslogo"><img src="https://www.newstatesman.com/sites/default/files/styles/large/public/ns-ga.jpeg?itok=soqxWQNh"></span></a><a><span class="tns-ev-close tns-close">&times;</span></a><ev-login ev-ready="login_loaded" auth-scheme-name="default" forgot-password-service="edit_password" show-social="true" recaptcha="false" social-style="icons" social-networks="['facebook', 'google']" remember-me="true" title="Login" show-labels="false" show-header="false" show-container="false"  auto-populate="true" submitbtn-caption="Log In" override-translation-key="ev.login"></ev-login><span class="tns-right">Don't have an account? <a name="register" class="tns-goto-register" data-context="Login">Sign up</a></span></div><div class="tns-modal tns-modal--register"><a><span class="ev-nslogo"><img src="https://www.newstatesman.com/sites/default/files/styles/large/public/ns-ga.jpeg?itok=soqxWQNh"></span></a><a><span class="tns-ev-close tns-close">&times;</span></a><ev-registration show-labels="false" show-header="false" id="registration" auth-scheme-name="default" recaptcha="false" service-name="default" title="register" submitbtn-caption="Create Account" auto-login="true" show-social="true" social-style="icons" social-networks="['facebook', 'google']"></ev-registration><div class="tns-pp ng-scope">By registering, I Agree to the <a href="/terms/" target="_blank">Terms of Service</a> and <a href="/privacy-policy/" target="_blank">Privacy Policy</a></div><span class="tns-right">Already a member? <a name="login" class="tns-goto-login" data-context="Register">Log in</a></span></div><div class="tns-modal tns-modal--paywall"><a><span class="tns-ev-close tns-close">&times;</span></a><ev-paywall modal="false"></ev-paywall></div><div class="tns-modal tns-modal--paywallNotifier"><a><span class="tns-ev-close tns-close">&times;</span></a><ev-paywall-notifier modal="false"></ev-paywall-notifier></div><div name="sociallogin" class="tns-modal tns-modal--sociallogin"><a><span class="tns-ev-close tns-close">&times;</span></a><ev-social-registration id="socialRegistration" auth-scheme-name="default" service-name="registration" title="Create an Account"
+                modal-keyboard="true" modal-backdrop="true" auto-populate="true" auto-register="false"
+                show-error-msgs="true" submitBtn-caption="Create Account" cancel-anchor-caption="" show-labels="false">
+            </ev-social-registration></div></div>
+ <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+    ga('create', 'UA-121540-1', 'auto');
+
+           ga('set', 'dimension4', '311996');
+
+      
+              ga('set', 'dimension5', "2018-01-09 12:30:18");
+      
+              ga('set', 'dimension6', "Sanjana Varghese");
+
+     
+   ga('send', 'pageview');
+ 
+ </script>
+
+ 
+    <script>
+
+    function load_disqus(c,path)
+    {
+	    //var pageurl= '?q=/node/'+c;
+		//history.pushState('stateObj', "page 2", pageurl);
+		history.pushState('stateObj', "page 2", path);
+	   if(document.getElementById("disqus_thread"))
+	   {
+
+        var ano = document.getElementById("disqus_loader").getAttribute("class");
+			  if(ano.substr(13)==c)
+			  {
+				   var vis = document.getElementById("disqus_thread").getAttribute("style");
+				  if(vis == 'display: none;')
+				  {
+
+				  document.getElementById("disqus_thread").style.display = 'block';
+					return false;
+				  }
+				  else{
+
+					 document.getElementById("disqus_thread").style.display = 'none';
+					return false;
+				  }
+			  }
+
+
+	    var x = document.getElementById("disqus_thread").getAttribute("class");
+	   document.getElementById("disqus_thread").setAttribute("id", x);
+
+	    var y = document.getElementById("disqus_loader").getAttribute("class");
+	   document.getElementById("disqus_loader").setAttribute("id", y);
+
+	  // var ldr1 = document.getElementById(y);
+	   //ldr1.style.display = 'Block';
+
+	   }
+
+      document.getElementById("disqus_thread"+c).setAttribute("id", "disqus_thread");
+	  document.getElementById("disqus_loader"+c).setAttribute("id", "disqus_loader");
+
+	  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = "https://newstatesman1913.disqus.com/embed.js";
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     // var ldr = document.getElementById('disqus_loader');
+     // ldr.parentNode.removeChild(ldr);
+	 // ldr.style.display = 'none';
+
+	 return false;
+    }
+
+	function showimage(id)
+   {
+	 var cls = document.getElementById(id).getAttribute("class");
+     var n = cls.indexOf("feature-image-revealed");
+    if(n < 0)
+    document.getElementById(id).setAttribute("class",cls+" feature-image-revealed");
+    else
+	 document.getElementById(id).setAttribute("class",cls.substr(0,n));
+     return;
+
+
+
+  }
+ function shownewsform(id)
+   {
+	 var cls = document.getElementById(id).getAttribute("class");
+     var n = cls.indexOf("email-newsletter-revealed");
+    if(n < 0)
+    document.getElementById(id).setAttribute("class",cls+" email-newsletter-revealed");
+    else
+	 document.getElementById(id).setAttribute("class",cls.substr(0,n));
+     return;
+
+
+
+  }
+/*  jQuery(".email-newsletter-toggle").click(function(){
+	nlid = this.id;
+  nids = nlid.split('_');
+  nids = nids[1];
+  n = '#showhidenews_'+nids;
+  jQuery(n).toggleClass("email-newsletter-revealed");
+});
+*/
+
+  </script>
+
+         <script>
+                  /*function checktheval(sel_val){
+
+   var my_selector = '.field-name-body div.field-item > p:nth-last-of-type('+sel_val+')';
+  if(jQuery(my_selector).html().length<1){
+    //return 1;
+      sel_val++;
+    checktheval(sel_val);
+  }else{
+	  console.log(my_selector);
+    return my_selector;
+  }
+}*/
+
+
+jQuery(document).ready(function($) {
+
+
+//alert("ok blog dsfsd");
+	  //check_sel = checktheval(3);
+	  //console.log("=====================");
+	 //console.log(check_sel);
+// jQuery( "div.story_related" ).insertAfter(check_sel);
+var currentNid = Drupal.settings.custommodule.currentNid;
+jQuery( "#node-"+currentNid+" div.story_related_"+currentNid ).insertAfter( ".field-name-body p:eq(3)" );
+var te=jQuery("#node-"+currentNid+ " #related-story-wraper").html();
+jQuery("div.story_related_"+currentNid+" #"+currentNid+"related_story").append(te);
+
+
+//console.log("=====================");
+ // console.log(te);
+ // console.log("=====================");
+ // console.log( "#node-"+currentNid+ " div."+currentNid+"story_related" );
+ // console.log("#node-"+currentNid+" div."+currentNid+"story_related #"+currentNid+"related_story");
+
+
+ });
+
+
+
+</script>
+
+
+<!-- .top-leaderboard -->
+
+<header class="site-header header-america clearfix">
+  <div class="row">
+
+    <div class="ns-switcher">
+      <label for="check" class="ns-switcher_selected america_selected"><b>America EDITION</b> <small>US</small></label>
+      <input id="check" type="checkbox">
+      <div class="ns-switcher_close">
+        <label onclick="javascript:location.href='/uk';" for="check"><b>UK EDITION</b> <small>UK</small></label>
+      </div>  
+    </div>
+    
+    <h1 class="site-logo">
+            <a href="/us" title="Home"><img src="/sites/all/themes/creative-responsive-theme/images/new-statesman-america.png" alt="New Statesman America"/></a>
+          </h1>
+    <div class="region region-ns-offers-america">
+  <div id="block-views-ns-offers-america-ns-new-offers" class="block block-views">
+
+      
+  <div class="content">
+    <div class="view view-ns-offers-america view-id-ns_offers_america view-display-id-ns_new_offers secondary-content-box primary-offer-box row view-dom-id-5dd963e81c4aeefb9c9ce4793e85b22b">
+        
+  
+  
+      <div class="view-content">
+        <div>
+      
+          <div class="large-7 small-7 xsmall-7 columns offer-text">
+                <h3> </h3>
+<div class="cta"><a href="/us-subscribe">Subscribe</a></div>
+<h6 class="new-text">from just $2 per issue</h6>
+                </div>    
+          <img typeof="foaf:Image" src="https://www.newstatesman.com/sites/default/files/styles/magazine-cover-thumb/public/magazinecovers/2019_09_how_brexit_broke_politics_med.jpg?itok=gEDsrNs5" alt="" />    </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+    <div class="header-promotion">
+	<div>
+		<div <div class="promotion christmas-promotion">
+	      <a href="https://www.newstatesman.com/subscribe">
+	        <img src="/sites/all/themes/creative-responsive-theme/images/New-Statesman-Subscribe-Offer.png" alt="New Statesman Christmas offer: Subscribe for just £1.96 an issue">
+	      </a>
+	    </div>
+	    <!-- .christmas-promotion -->
+	</div>
+	
+	<div>
+		<div class="twitter-follow-promotion">
+			<a href="https://twitter.com/NewStatesman"><strong>Follow us</strong> on Twitter </a>
+		</div>
+		<!-- .follow-promotion -->
+	</div>
+
+	<div>
+		<div class="podcast-promotion">
+			<a href="/podcast/"><small>New Statesman</small> <span>Podcast</span></a>
+		</div>
+		<!-- .podcast-promotion -->
+	</div>
+
+
+</div>
+<!-- header-promotion -->
+  </div>
+  <!-- .row -->
+
+    <nav class="site-nav">
+        <div class="row">
+          <div class="nav-links">
+            <ul class="site-categories clearfix">
+                            <div class="region region-mainnav-us">
+  <div id="block-menu-block-5" class="block block-menu-block">
+
+      
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-5 menu-name-menu-main-menu-america parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-12268 menu-mlid-9698"><a href="/us">Home</a></li>
+<li class="leaf has-children menu-mlid-12219 pl-removedmenu"><a href="/us/politics">Politics</a></li>
+<li class="leaf has-children menu-mlid-12225"><a href="/us/culture">Culture</a></li>
+<li class="leaf has-children menu-mlid-12229 wl-removedmenu"><a href="/world">World</a></li>
+<li class="last leaf has-children menu-mlid-12237 sl-removedmenu"><a href="/sci_tech">Science &amp; Tech</a></li>
+</ul></div>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                          </ul>
+            <div class="content-links-toggle">More</div>
+            <ul class="content-links">
+                            <div class="region region-mainnav2-us">
+  <div id="block-menu-block-6" class="block block-menu-block">
+
+      
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-6 menu-name-menu-main-menu-2-america parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="first leaf menu-mlid-12249 II"><a href="/long-reads">Long Reads</a></li>
+<li class="leaf menu-mlid-12250 mag-link"><a href="/magazine">Magazine</a></li>
+<li class="leaf has-children menu-mlid-12251 sp" id="sp"><a href="/spotlight-america">Spotlight</a></li>
+<li class="leaf menu-mlid-12271"><a href="/events">Events</a></li>
+<li class="last leaf menu-mlid-12261 subscribe-link"><a href="/us-subscribe">Subscribe</a></li>
+</ul></div>
+  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+                          </ul>
+            <div class="mega-menu-row mega-menu row politics-mg">
+                <div class="close-hover-mega-menu">Close menu</div>
+
+                <div class="row">
+                  <div class="large-12 columns">
+                    <div class="row">
+                      <div class="large-9 columns">
+                                               </div>
+                      <div class="large-3 columns">
+                                               </div>
+                    </div>
+                    <!-- .row -->
+
+                    <div class="main-mega-menu-section">
+                      <div class="large-12 columns ns-network">
+
+                        <div class="mega-menu-logo">
+                          <img src="/sites/all/themes/creative-responsive-theme/images/nsnetworks.png">
+                        </div>
+
+                        <div class="network-sites">
+                          <div class="row">
+                            <div class="large-4 columns">
+                              <h1>Consumer</h1>
+                              <h2><a href="http://www.citymetric.com">CityMetric</a></h2>
+                            </div>
+                            <div class="large-4 columns">
+                              <h1>Business</h1>
+                              <h2><a href="http://tech.newstatesman.com/">New Statesman Tech</a></h2>
+                            </div>
+                            <div class="large-4 columns">
+                              <h1><a href="/spotlight">Spotlight</a></h1>
+                              <h2><a href="/cyber">Cyber</a></h2>
+                              <h2 class="viewall"><a href="/spotlight">View All</a></h2>
+
+
+                            </div>
+                          </div>
+                        </div>
+                        <!-- .network-sites -->
+
+                      </div>
+                      <!-- .ns-network -->
+                    </div>
+                    <!-- .main-mega-menu-section -->
+
+                  </div>
+                  <!-- .large-8 -->
+
+                </div>
+                <!-- .row -->
+
+              </div>
+              <!-- .politics-mg -->
+
+            <div class="mega-menu-row mega-menu row culture-mg">
+                <div class="close-hover-mega-menu">Close menu</div>
+
+                <div class="row">
+
+                  <div class="large-12 columns">
+
+                    <div class="row">
+                      <div class="large-9 columns">
+                                               </div>
+                      <div class="large-3 columns">
+                                               </div>
+                    </div>
+                    <!-- .row -->
+
+                    <div class="main-mega-menu-section">
+                      <div class="large-12 columns ns-network">
+
+                        <div class="mega-menu-logo">
+                          <img src="/sites/all/themes/creative-responsive-theme/images/nsnetworks.png">
+                        </div>
+
+                        <div class="network-sites">
+                          <div class="row">
+                            <div class="large-4 columns">
+                              <h1>Consumer</h1>
+                              <h2><a href="http://www.citymetric.com">CityMetric</a></h2>
+                            </div>
+                            <div class="large-4 columns">
+                              <h1>Business</h1>
+                              <h2><a href="http://tech.newstatesman.com/">New Statesman Tech</a></h2>
+                            </div>
+                            <div class="large-4 columns">
+                              <h1><a href="/spotlight">Spotlight</a></h1>
+                              <h2><a href="/cyber">Cyber</a></h2>
+                             <!-- <h2><a href="https://www.newstatesman.com/northern-powerhouse">Northern Powerhouse</a></h2>
+                              <h2><a href="https://www.newstatesman.com/skills">Skills</a></h2>
+                              <h2><a href="https://www.newstatesman.com/manufacturing">Manufacturing</a></h2> <h2><a href="https://www.newstatesman.com/investment">Investment</a></h2>-->
+                              <h2 class="viewall"><a href="/spotlight">View All</a></h2></h2>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- .network-sites -->
+
+                      </div>
+                      <!-- .ns-network -->
+                    </div>
+                    <!-- .main-mega-menu-section -->
+
+                  </div>
+                  <!-- .large-8 -->
+
+                </div>
+                <!-- .row -->
+              </div>
+              <!-- .culture-mg -->
+
+            <div class="mega-menu-row mega-menu row world-mg">
+                <div class="close-hover-mega-menu">Close menu</div>
+
+                <div class="row">
+
+                  <div class="large-12 columns">
+
+                    <div class="row">
+                      <div class="large-9 columns">
+                                               </div>
+                      <div class="large-3 columns">
+                                               </div>
+                    </div>
+                    <!-- .row -->
+
+                    <div class="main-mega-menu-section">
+                      <div class="large-12 columns ns-network">
+
+                        <div class="mega-menu-logo">
+                          <img src="/sites/all/themes/creative-responsive-theme/images/nsnetworks.png">
+                        </div>
+
+                        <div class="network-sites">
+                          <div class="row">
+                            <div class="large-4 columns">
+                              <h1>Consumer</h1>
+                              <h2><a href="http://www.citymetric.com">CityMetric</a></h2>
+                            </div>
+                            <div class="large-4 columns">
+                              <h1>Business</h1>
+                              <h2><a href="http://tech.newstatesman.com/">New Statesman Tech</a></h2>
+                            </div>
+                            <div class="large-4 columns">
+                              <h1><a href="/spotlight">Spotlight</a></h1>
+                              <h2><a href="/cyber">Cyber</a></h2>
+                             <!-- <h2><a href="https://www.newstatesman.com/northern-powerhouse">Northern Powerhouse</a></h2>
+                              <h2><a href="https://www.newstatesman.com/skills">Skills</a></h2>
+                              <h2><a href="https://www.newstatesman.com/manufacturing">Manufacturing</a></h2> <h2><a href="https://www.newstatesman.com/investment">Investment</a></h2>-->
+                              <h2 class="viewall"><a href="/spotlight">View All</a></h2></h2>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- .network-sites -->
+
+                      </div>
+                      <!-- .ns-network -->
+                    </div>
+                    <!-- .main-mega-menu-section -->
+
+                  </div>
+                  <!-- .large-8 -->
+
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- world-mg -->
+
+            <div class="mega-menu-row mega-menu row science_tech-mg">
+                <div class="close-hover-mega-menu">Close menu</div>
+
+                <div class="row">
+
+                  <div class="large-12 columns">
+
+                    <div class="row">
+                      <div class="large-9 columns">
+                                               </div>
+                      <div class="large-3 columns">
+                                               </div>
+                    </div>
+                    <!-- .row -->
+
+                    <div class="main-mega-menu-section">
+                      <div class="large-12 columns ns-network">
+
+                        <div class="mega-menu-logo">
+                          <img src="/sites/all/themes/creative-responsive-theme/images/nsnetworks.png">
+                        </div>
+
+                        <div class="network-sites">
+                          <div class="row">
+                            <div class="large-4 columns">
+                              <h1>Consumer</h1>
+                              <h2><a href="http://www.citymetric.com">CityMetric</a></h2>
+                            </div>
+                            <div class="large-4 columns">
+                              <h1>Business</h1>
+                              <h2><a href="http://tech.newstatesman.com/">New Statesman Tech</a></h2>
+                            </div>
+                            <div class="large-4 columns">
+                              <h1><a href="/spotlight">Spotlight</a></h1>
+                              <h2><a href="/cyber">Cyber</a></h2>
+                             <!-- <h2><a href="https://www.newstatesman.com/northern-powerhouse">Northern Powerhouse</a></h2>
+                              <h2><a href="https://www.newstatesman.com/skills">Skills</a></h2>
+                              <h2><a href="https://www.newstatesman.com/manufacturing">Manufacturing</a></h2> <h2><a href="https://www.newstatesman.com/investment">Investment</a></h2>-->
+                              <h2 class="viewall"><a href="/spotlight">View All</a></h2></h2>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- .network-sites -->
+
+                      </div>
+                      <!-- .ns-network -->
+                    </div>
+                    <!-- .main-mega-menu-section -->
+
+                  </div>
+                  <!-- .large-8 -->
+
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- ns_tech-mg -->
+
+
+			<div class="mega-menu-row mega-menu row event-mg">
+                <div class="close-hover-mega-menu">Close menu</div>
+
+                <div class="row">
+
+                  <div class="large-12 columns">
+
+                    <div class="row">
+
+                         
+                    </div>
+                    <!-- .row -->
+
+                    <div class="main-mega-menu-section">
+                      <div class="large-12 columns ns-network">
+
+                        <div class="mega-menu-logo">
+                          <img src="/sites/all/themes/creative-responsive-theme/images/nsnetworks.png">
+                        </div>
+
+                        <div class="network-sites">
+                          <div class="row">
+                            <div class="large-4 columns">
+                              <h1>Consumer</h1>
+                              <h2><a href="http://www.citymetric.com">CityMetric</a></h2>
+                            </div>
+                            <div class="large-4 columns">
+                              <h1>Business</h1>
+                              <h2><a href="http://tech.newstatesman.com/">New Statesman Tech</a></h2>
+                            </div>
+                            <div class="large-4 columns">
+                              <h1><a href="/spotlight">Spotlight</a></h1>
+                              <h2><a href="/cyber">Cyber</a></h2>
+                             <!-- <h2><a href="https://www.newstatesman.com/northern-powerhouse">Northern Powerhouse</a></h2>
+                              <h2><a href="https://www.newstatesman.com/skills">Skills</a></h2>
+                              <h2><a href="https://www.newstatesman.com/manufacturing">Manufacturing</a></h2> <h2><a href="https://www.newstatesman.com/investment">Investment</a></h2>-->
+                              <h2 class="viewall"><a href="/spotlight">View All</a></h2></h2>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- .network-sites -->
+
+                      </div>
+                      <!-- .ns-network -->
+                    </div>
+                    <!-- .main-mega-menu-section -->
+
+                  </div>
+                  <!-- .large-8 -->
+
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- events -->
+
+            <div class= 'tns-evo-profile'>
+              
+  <ev-profile ev-ready="event_to_listen" profile="profile" style="float: right;">
+    <ev-profile-when state="available">
+      <div class="tns-checking-profile">
+        <a href="/my-account" class="navLoggedIn">My Account</a> |
+        <a class="navLoggedIn" onclick="javascript:EV.Core.UI.logout();">Log out</a>
+      </div>
+    </ev-profile-when>
+    <ev-profile-when state="not-loggedIn">
+
+      <button name="login" class="tns-btn tns-login" >Login</button> | <button name="register" class="tns-btn tns-register">Register</button>
+    </ev-profile-when></ev-profile>            </div>
+
+            </div>
+
+            
+
+            <div class="site-search"><div class="region region-search">
+  <div id="block-search-form" class="block block-search">
+
+      
+  <div class="content">
+    <form class="google-cse" action="/science-tech/space/2018/01/one-small-step-private-companies-how-future-space-travel-being-redefined" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-DlF5MrCRnEYfZXN1KM3rc0EKR6yadCGEHYfZ-foHMpU" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+</div>
+            <div class="mega-menu-toggle mobile-mega-menu-toggle">Menu</div>
+            <div class="search-toggle">Search</div>
+
+        </nav>       
+
+</header>
+<div id="content" >
+  <div id="container" class="parallax">
+   
+
+                    				                                                <div class="region region-content">
+  
+          
+<input type="hidden" name="oldcat" id="oldcat" value=""  />
+<input type="hidden" name="noimage" id="noimage" value=""  />
+
+<!--<script type="text/javascript" async="true" src="https://fo-static.omnitagjs.com/otp.js"></script>-->
+<!-- New Statesman widget sidebar Desktop/Tablet -->
+<!--<script type="text/javascript" async="true" src="//fo-api.omnitagjs.com/fo-api/ot.js?Placement=c478f81aae3ce0e84511bde9b10e0e2e"></script>-->
+<!--omn -->
+
+<script src="//get.s-onetag.com/d70a1473-2da8-45dc-93bc-2eec7b92f5cf/tag.min.js" async defer></script>
+
+
+<Script>
+if(jQuery('#oldcat').val()!=''){
+                jQuery(document.body).addClass(jQuery('#oldcat').val());
+                }
+jQuery('#oldcat').val('scitech');
+
+
+//jQuery(".share-buttons").stick_in_parent({offset_top:110, recalc_every: 1});
+
+ </script>
+<Script>
+if(jQuery('#noimage').val()!=''){
+                jQuery(document.body).addClass(jQuery('#noimage').val());
+                }
+jQuery('#noimage').val('imageexist');
+
+
+ </script>
+<div class="article-featured-image parallax-layer parallax-layer-back">
+
+<div class="main-content">
+<div class="row">
+  <article class="large-8 columns primary-content article-column">
+  <div class="row">
+        
+
+    <div id="node-311996" class="node node-blogs node-full" about="/science-tech/space/2018/01/one-small-step-private-companies-how-future-space-travel-being-redefined" typeof="sioc:Item foaf:Document">
+      <div class="row">
+	          <header class="large-9 columns article-header"  style="background-color:#fff">
+	            <!--<div class="article-category">  </div>-->
+          
+
+		   						 <div class="article-category"><a href="/sci_tech/space">Space</a> </div>
+						
+
+
+          <!-- .article-category -->
+                    <div class="article-date">
+            9 January 2018          </div>
+                              <h1  class="title inf_class" data-analyticsid="/science-tech/space/2018/01/one-small-step-private-companies-how-future-space-travel-being-redefined"><!-- @Title --> One small step for private companies: how the future of space travel is being redefined</h1>
+          <span property="dc:title" content="One small step for private companies: how the future of space travel is being redefined" class="rdf-meta element-hidden"></span><div class="field field-name-field-subheadline field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"> <p>
+	There is a widening divide between “old space” – the domain of government agencies – and “new space”, which includes glamorous projects like rockets to Mars.</p>
+ </div></div></div>
+
+		  </header>
+        <aside class="large-3 columns article-author" style="padding-bottom:0;">
+                        <div class="multiple-author-images">
+
+                                  <div class="author-avatar" ><img src="/nsauthorplaceholder.jpg"></div>
+                
+                
+              </div>
+          <div class="author-byline"><!-- @Author -->
+            By <a href="/writers/321744">Sanjana Varghese</a>          </div>
+                  </aside>
+        <!-- .article-author -->
+
+       <div class="featured-image clearfix"><span>              <div class="field field-name-field-node-image field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><noscript class="adaptive-image" data-adaptive-image-breakpoints="300 768 1024" data-adaptive-image-300-img="&lt;img class=&quot;adaptive-image&quot; data-adaptive-image-breakpoint=&quot;300&quot; typeof=&quot;foaf:Image&quot; src=&quot;https://www.newstatesman.com/sites/default/files/styles/nodeimage/public/blogs_2018/01/gettyimages-521520676.jpg?itok=lrtghwcd&quot; alt=&quot;&quot; title=&quot;SpaceX&quot; /&gt;" data-adaptive-image-768-img="&lt;img class=&quot;adaptive-image&quot; data-adaptive-image-breakpoint=&quot;768&quot; typeof=&quot;foaf:Image&quot; src=&quot;https://www.newstatesman.com/sites/default/files/styles/nodeimage/public/blogs_2018/01/gettyimages-521520676.jpg?itok=lrtghwcd&quot; alt=&quot;&quot; title=&quot;SpaceX&quot; /&gt;" data-adaptive-image-1024-img="&lt;img class=&quot;adaptive-image&quot; data-adaptive-image-breakpoint=&quot;1024&quot; typeof=&quot;foaf:Image&quot; src=&quot;https://www.newstatesman.com/sites/default/files/styles/nodeimage/public/blogs_2018/01/gettyimages-521520676.jpg?itok=lrtghwcd&quot; alt=&quot;&quot; title=&quot;SpaceX&quot; /&gt;" data-adaptive-image-max-img="&lt;img class=&quot;adaptive-image&quot; data-adaptive-image-breakpoint=&quot;max&quot; typeof=&quot;foaf:Image&quot; src=&quot;https://www.newstatesman.com/sites/default/files/styles/nodeimage/public/blogs_2018/01/gettyimages-521520676.jpg?itok=lrtghwcd&quot; alt=&quot;&quot; title=&quot;SpaceX&quot; /&gt;"><img typeof="foaf:Image" src="https://www.newstatesman.com/sites/default/files/styles/nodeimage/public/blogs_2018/01/gettyimages-521520676.jpg?itok=lrtghwcd" alt="" title="SpaceX" /></noscript>
+</div></div></div>          </span>
+             <div style="position:relative; top:-2em;">               <div class="image-credit">
+                <!--
+THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
+See http://api.drupal.org/api/function/theme_field/7 for details.
+After copying this file to your theme's folder and customizing it, remove this
+HTML comment.
+-->
+
+  
+          Photo: Getty      
+
+              </div>
+              			  </div>
+      </div>
+      
+    </div>
+    <!-- .featured-image -->
+
+      </div>
+      <!-- .row -->
+
+      <div class="row">
+        <div class="large-3 columns article-left-column">
+          <div class="full-height-column">
+            <ul class="share-buttons">
+              <li class='facebook-button st_facebook_hcount'><a target="_blank" href=http://www.facebook.com/sharer.php?u=https://www.newstatesman.com/science-tech/space/2018/01/one-small-step-private-companies-how-future-space-travel-being-redefined&t=One+small+step+for+private+companies%3A+how+the+future+of+space+travel+is+being+redefined > <span class="stButton"> <span class="stMainServices st-facebook-counter">&nbsp;</span> <span class="stArrow"><span class="stBubble_hcount">
+                                </span></span></span> </a></li>
+              <li class='twitter-button st_twitter_hcount'><a target="_blank" href=http://twitter.com/share?text=One+small+step+for+private+companies:+how+the+future+of+space+travel+is+being+redefined&url=https://www.newstatesman.com/science-tech/space/2018/01/one-small-step-private-companies-how-future-space-travel-being-redefined > <span class="stButton"> <span class="stMainServices st-twitter-counter">&nbsp;</span> <span class="stArrow"><span class="stBubble_hcount">
+                                </span></span></span></a> </li>
+              <li class='reddit-button st_reddit_hcount' ><a target="_blank" href=http://www.reddit.com/submit?url=https://www.newstatesman.com/science-tech/space/2018/01/one-small-step-private-companies-how-future-space-travel-being-redefined&title=One small step for private companies: how the future of space travel is being redefined > <span class="stButton"> <span class="reddit-button st_reddit_hcount"> &nbsp;</span> <span class="stArrow"><span class="stBubble_hcount">
+                                </span></span></span></a> </li>
+              <li class="email-button st_email_hcount"><a href="mailto:type email address here?subject=One small step for private companies: how the future of space travel is being redefined &body=https://www.newstatesman.com/science-tech/space/2018/01/one-small-step-private-companies-how-future-space-travel-being-redefined&#32;&#32;" title="Email to a friend/colleague"> <span class="stButton" > <span class="stMainServices st-mail-counter">&nbsp;</span> <span class="stArrow"><span class="stBubble_hcount"></span></span></span></a></li>
+              <ul class="links inline"><li class="widgets_service_links-default first"></li>
+<li class="defaultblogtop last"></li>
+</ul>            </ul>
+
+            <div class="ns-form-item in-article-newsletter-form"><h3>Sign Up</h3><p>Get the New Statesman's Morning Call email.</p> <div id="block-block-63" class="block block-block">
+
+      
+  <div class="content">
+     <div class="cta">
+	<a href="/morning-call-email-newsletter">Sign-up</a></div>
+   </div>
+  
+</div> <!-- /.block -->
+</div>          </div>
+        </div>
+        <!-- .article-header-sharers -->
+
+        
+			<section class="large-9 columns" style="background-color:#fff">
+		<?php}
+		else{?>
+
+
+		
+
+
+            <div class="content node-blogs" style="background-color:#fff"><!-- @Content -->
+              <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"> <p>
+	At 0100 GMT on Monday morning, Zuma, a satellite with a <strong>“</strong>secretive payload” was launched into orbit. The rocket launching it, Falcon 9, was created by SpaceX, the brainchild of irreverent tech billionare Elon Musk. The classified nature of its contents meant that the usual live feed that accompanies rocket launches was cut off after five minutes. The mission’s press release offered very little other detail.
+<p>
+	All that is known about Zuma is that it contains a satellite manufactured by company Northrop Gumman for the US government, and was in low-earth orbit, as most commercial spacecraft tends to be. However, it remains unclear which government agency will be controlling the satellite, and what purposes the information it collects will serve.
+<p>
+	SpaceX’s launch of Zuma is yet another sign that private companies are set to control the future of space exploration. In late January, SpaceX will be launching Falcon Heavy, the world’s most powerful operational rocket.<div class="dianomi-ad dianomi-ad-1"><iframe width="500" height="150" scrolling="NO" src="//www.dianomi.com/smartads.epl?id=3585" style="width: 100%; border: none; overflow: hidden;"></iframe></div>
+<p>
+	Historically, space exploration has been the domain of the state. It was a way to assert national identity through exploring a new frontier, and the Soviet-American space race of the 1960s was as much about political dominance as it was about technical innovation.
+<p>
+	Once hurdles such as the limitations of computing power were surpassed, world powers began to invest significant amounts of money into exploring space. A recently released report from the US Academy of Natural Sciences emphasised the value of innovation in space exploration for its applications to problems on earth, such as farmers facing drought, a dynamic which will only become more pronounced in coming years. 
+<p>
+	But rates of technological advancement and decreasing costs of production have enabled private companies to move from manufacturing low-orbit satellites to rather improbably advertising commercial flight to Mars (on the Virgin Galactic aircraft VSS Unity). These kinds of changes are fairly unprecedented, but the last few years have demonstrated the ability of commercial entities to come up with completely novel ways to explore space. 
+<p>
+	<a href="https://www.ft.com/content/05f24014-07e1-11e7-97d1-5e720a26771b">A <em>Financial Times </em>article</a> pointed out that pundits are increasingly seeing a split between “old space” – the domain of governments and well established contractors – and “new space”, which is where glamorous projects like SpaceX’s rockets to Mars reside. <div class="video-inread unruly-video">
+											  <div id="1x3">
+											  <script type="text/javascript">
+												googletag.cmd.push(function() { googletag.display("1x3"); });
+											  </script>
+											</div>
+										  </div>
+<p>
+	David Baker, from the British Interplanetary Society, the oldest space advocacy organisation globally, said: “Space is about applications – such as communications, weather forecasting, TV, data relay, navigation, monitoring Earth’s resources –  which are being increasingly handled by private companies, and exploration, which is the job of the big space agencies.
+<p>
+	“The total global space industry is worth around $400bn a year, of which only 22 per cent is run by governments, and the public and private are not necessarily in competition with each other. The amount of tax paid by the private space-related applications industries more than pays for the government programmes.”<div class="dianomi-ad dianomi-ad-2"><iframe width="500" height="150" scrolling="NO" src="//www.dianomi.com/smartads.epl?id=4302" style="width: 100%; border: none; overflow: hidden;"></iframe></div>
+<p>
+	The government and the military have always enjoyed a favourable relationship with space exploration agencies, particularly in the USA. However, private spaceflight companies began to spring up as early as the 1980s, the first being Orbital Sciences, which already has a significant number of satellites and rockets in space in deals with Nasa. But companies like SpaceX and Blue Origin (headed by Amazon CEO Jeff Bezos) have made significant headway into space exploration more recently, even surpassing government innovation by miles.
+<p>
+	No state space agency has been able to reuse a rocket. By contrast, companies like Blue Origin and Space X have been able to do it so many times that it’s become a part of their business model. With the Zuma spacecraft, the first-stage booster rocket made a then unprecedented upright landing SpaceX’s Landing Zone 1 in Florida's Cape Canaveral in Decemeber 2015, in what is now a typical SpaceX manoeuvre. Since many of these companeis have stated that their priorities are making space travel accessible and affordable, re-using rockets will drive down costs significantly. <div class="dianomi-ad dianomi-ad-3"><iframe width="500" height="150" scrolling="NO" src="//www.dianomi.com/smartads.epl?id=4303" style="width: 100%; border: none; overflow: hidden;"></iframe></div>
+<p>
+	Moreover, rocket development in the US is in the hands of major corporations such as Boeing or Lockheed Martin, which did not see the value in spending research money on concepts such as “reusability”, which weren't considered essential to the development of their vehicles. 
+<p>
+	“As a government agency, Nasa is a conservative, no-risk organisation, accountable to the taxpayer and with a budget authorised by Congress each year,” Baker points out. "With several billion dollars of private money at their disposal, entrepreneurs such as Elon Musk and Jeff Bezos were able to do what they do best - use their own money to take risk and employ bright engineers whose ideas had otherwise been constrained by the bureaucratic baggage.”
+<p>
+	Once the private space companies established themselves, they could however benefit from government money, in the form of contracts with Nasa to carry cargo to the International Space Station, and even, from 2019, to send astronauts from US soil. <div class="video-inread3 unruly-video">
+											  <div id="1x1">
+											  <script type="text/javascript">
+												googletag.cmd.push(function() { googletag.display("1x1"); });
+											  </script>
+											</div>
+										  </div>
+<p>
+	Long-term government contracts are indeed lucrative, and have sustained organisations such as Orbital Sciences, the world's oldest private spaceflight company, Boeing and Lockheed Martin.
+<p>
+	Of course, the universe isn’t a free-for-all, and the private space companies also seem to be investing their hopes in space tourism. This is, however, hardly a novel idea: it was first proposed in 1968 after the first Apollo flight. Other recent money-making plans include developing asteroid mining for minerals (the US has already claimed legal ownership of any minerals found in space), or colonising space, which seems like the eventual aim of many of the private space corporations. SpaceX has established itself as a dominant player in space exploration, becoming the first commercial company to dock a spacecraft at the International Space Station in 2012. 
+<p>
+	The majority of these companies are American and headquartered in California. Despite being encouraged by the culture of technology and the Obama administration, they have been beleagured by setbacks. For example, Virgin Galactic hasn't competed a single flight with paying customers in low-earth orbit in the ten years since Branson publicised his ambitions. 
+<p>
+	But it's not all over for Nasa quite yet. <a href="https://www.wsj.com/articles/u-s-spy-satellite-believed-lost-after-spacex-mission-fails-1515462479">The <em>Wall Street Journal</em> reported this week</a> that US government and industry officials were given information to indicate that Zuma was a failure, further substantiating claims that Zuma was designated for espionage. However, Baker provided further technical clarification about the nature of the issue.
+<p>
+	 "The total loss of the Zuma satellite was nothing to do with the SpaceX launch but rather the design of the adapter attaching the payload to the top of the rocket.This adapter is usually the responsibility of the company launching the rocket but because it was a highly secret satellite, it was Northrup Grumman's failure."
+<p>
+	Fundamentally, space has very few rules. Both space explorers and the people on earth who put them there are in uncharted waters, given the lack of legislation governing extra-terrestrial affairs. Does the concept of sovereign territory apply in space, like it does in international waters? Is a Kessler effect scenario – where the density of satellites above Earth grows so exponentially that a collision between any two will cause resulting debris to break apart every other satellite – more likely as the atmosphere becomes over-saturated? 
+<p>
+	Concerns about espionage and national security, a significant motivation for drawing a veil of secrecy over space exploration, take on cosmic dimensions in the relative lawlessness of space. A survey conducted in 2016 by the UK Department for Business and Trade Innovation highlighted the public's concerns around the relationship between the military and space, with one respondent recommending that companies “don’t put weapons up there”. 
+<p>
+	Of course, it can’t be all doom and gloom. Undoubtedly, the efforts of private space companies to bring spaceflight to the masses has caused an increase in public engagement with space – a domain reserved for the very well-trained few can now be perceived as a potential holiday destination. These advancements present completely new challenges for everyone involved, but similar discussions might have been had 100 years ago.
+<p>
+	Indeed, in the 1920s, as commercial air travel became more plausible, there were heated debates about whether it was actually as safe or as affordable as the companies advertised it to be. Now, people worry whether commercial space tourism will just end up being the playground of the extremely wealthy, and whether there are really any scientific benefits to be gained from vacations to the moon. Just as commercial aviation is now part and parcel of modern life, space travel could increasingly become just as normalised.
+<p>
+	As of now, Nasa too is throwing its weight behind big-picture, ambitious projects such as returning to the moon or sending humans to Mars. But this time, the US space agency will have company.
+<p>
+	“It's a true American story of entrepenurship and individual enterprise,” says Baker. “It's a win-win situation.”
+ </div></div></div><ul class="flippy">
+          
+    <li class="prev">
+              <a href="/world/middle-east/2018/01/homs-hiroshima-why-are-we-fascinated-ruins" title=""></a>          </li>
+          
+    <li class="next">
+              <a href="/culture/qa/2018/01/mary-beard-qa-rome-would-have-been-ghastly-woman-without-fortune" title="› Mary Beard Q&amp;amp;A: “Rome would have been ghastly for a woman without a fortune”">› Mary Beard Q&amp;A: “Rome would have been ghastly for a woman without a fortune”</a>          </li>
+  </ul>
+
+
+
+
+
+
+
+                        <div class="article-footer-promotion">
+              <div class="row">               <div id="block-views-4a2ab31638cb9a67cb7181c0bd512ad3" class="block block-views">
+
+      
+  <div class="content">
+    <div class="view view-ns-offers-america view-id-ns_offers_america view-display-id-articlefooterspromo view-dom-id-d9ba9df02f66fc0e2dc054cbcfbb9429">
+        
+  
+  
+      <div class="view-content">
+        <div>
+      
+          <div class="large-2 small-2 columns magazine-cover"><img typeof="foaf:Image" src="https://www.newstatesman.com/sites/default/files/styles/magazine-cover-thumb/public/magazinecovers/2019_09_how_brexit_broke_politics_med.jpg?itok=gEDsrNs5" alt="" /></div>    
+          <div class="large-10 small-10 columns promotion-text-remove">
+                <h3></h3> 
+<div class="cta subscribe-link"><a href="/us-subscribe">Subscribe</a>
+<h6 class="new-text">from just $2 per issue </h6>
+</div> <span></span>
+                </div>    </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  
+</div> <!-- /.block -->
+
+                <!--   <div class="large-2 small-2 columns magazine-cover">
+                                <a href=""><img src="/sites/default/files/styles/magazine-cover-thumb/public/magazinecovers/2015_34_corbyn_small.jpg" alt="New Statesman Magazine Cover"></a>
+                            </div>
+                            <div class="large-10 small-10 columns promotion-text">
+                                <h3>Promotional text sentence here</h3>
+                                <div class="cta subscribe-link"><a href="">Subscribe</a></div>
+                            </div>-->
+              </div>
+            </div>
+            <!-- .article-footer-promotion -->
+                        <!-- .first-appeared-in -->
+          </div>
+                                         </section>
+
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.node -->
+
+    <!-- Commented to fix gibraltar issue </div>-->
+    </article>
+    <div class="large-4 columns right-sidebar">
+      <div class="scrolling-content" id="showhidenews_311996">
+        <aside id="sidebar-second" role="complementary">
+		
+			<div class="secondary-content-box desktop-banner dianomi-ads">
+              <!--Smartad # 4222: New Statesman Right Rail-->
+              <iframe WIDTH="100%" HEIGHT="600" SCROLLING="NO" src="//www.dianomi.com/smartads.epl?id=4222"  style="width: 100%; height: 600px; border: none; overflow: hidden;"></iframe>
+            </div>
+            <!-- .dianomi-ad -->
+			
+		
+                    <div class="secondary-content-box mpu article-mpu-1">
+                <!-- /ca-pub-8914899523938848/New_Statesman/Unit2 -->
+                             <div id='Unit2' class='sidebarad1'>
+                  <script type='text/javascript'>
+                    googletag.cmd.push(function() { googletag.display('Unit2'); });
+                  </script>
+                </div>
+                        </div>
+                              <div class="secondary-content-box trending-box">
+                        <h2 class="scb-heading">Most Popular</h2>
+                        <div id="block-views-right-bar-blocks-us-lasthour" class="block block-views">
+
+      
+  <div class="content">
+    <div class="view view-right-bar-blocks-us view-id-right_bar_blocks_us view-display-id-lasthour view-dom-id-26869470eb866f95f48ba8ab2bad6e50">
+        
+  
+  
+      <div class="view-content">
+      <div class="article-list vertical-article-list clearfix">    <ul>          <li class="article-list vertical-article-list small-thumbs-article-list clearfix">  
+  <div class="large-4 small-4 xsmall-4 columns">        <a href="/politics/uk/2019/03/britain-s-violent-conscription-african-soldiers-finally-coming-light"><img typeof="foaf:Image" src="https://www.newstatesman.com/sites/default/files/styles/most_popular_homesectiontrending_264_198/public/Longreads_2019/03/gettyimages-865795070.jpg?itok=151shLyx" alt="Soldiers of the Eighth Army belonging to the Commonwealth and Allied forces are seen in the desert in 1942 on the battlefield at El Alamein, about 60 miles (100 kilometers) west of Alexandria." title="Soldiers of the Eighth Army belonging to the Commonwealth and Allied forces are seen in the desert in 1942 on the battlefield at El Alamein, about 60 miles (100 kilometers) west of Alexandria." /></a>  </div>  
+          <div class="large-8 small-8 xsmall-8 columns"><h5> <a href="/politics/uk/2019/03/britain-s-violent-conscription-african-soldiers-finally-coming-light">Britain’s violent conscription of African soldiers is finally coming to light</a></h5><div class="article-author">By Jack Losh</div>
+</div>  </li>
+          <li class="article-list vertical-article-list small-thumbs-article-list clearfix">  
+  <div class="large-4 small-4 xsmall-4 columns">        <a href="/world/north-america/2019/03/disgusting-ilhan-omar-poster-just-part-wider-campaign-american"><img typeof="foaf:Image" src="https://www.newstatesman.com/sites/default/files/styles/most_popular_homesectiontrending_264_198/public/blogs_2019/03/gettyimages-1094946878_1_.jpg?itok=PBSBFiKo" alt="" /></a>  </div>  
+          <div class="large-8 small-8 xsmall-8 columns"><h5> <a href="/world/north-america/2019/03/disgusting-ilhan-omar-poster-just-part-wider-campaign-american">The disgusting Ilhan Omar poster is just part of a wider campaign of American Islamophobia</a></h5><div class="article-author">By <a href="/writers/317117">Nicky Woolf</a></div>
+</div>  </li>
+          <li class="article-list vertical-article-list small-thumbs-article-list clearfix">  
+  <div class="large-4 small-4 xsmall-4 columns">        <a href="/world/north-america/2019/03/it-s-time-allow-naturalised-americans-run-president"><img typeof="foaf:Image" src="https://www.newstatesman.com/sites/default/files/styles/most_popular_homesectiontrending_264_198/public/blogs_2019/02/gettyimages-937918258.jpg?itok=KlhB5Gfq" alt="" /></a>  </div>  
+          <div class="large-8 small-8 xsmall-8 columns"><h5> <a href="/world/north-america/2019/03/it-s-time-allow-naturalised-americans-run-president">It’s time to allow naturalised Americans to run for president</a></h5><div class="article-author">By Arslan Malik</div>
+</div>  </li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  
+</div> <!-- /.block -->
+<div id="block-views-4f93221181110d70ad1f16dc2cecfaa7" class="block block-views">
+
+      
+  <div class="content">
+    <div class="view view-right-bar-blocks-us view-id-right_bar_blocks_us view-display-id-homepagesponsored sidebar-sponsored-article view-dom-id-0112fc4650675ad264446a106f5e9933">
+        
+  
+  
+      <div class="view-content">
+        <div class="row post-id-318185">
+      
+  <div class="large-4 small-4 xsmall-4 columns">        <a href="/spotlight/devolution/2019/02/firing-north-next-century"><img typeof="foaf:Image" src="https://www.newstatesman.com/sites/default/files/styles/trending_264_198/public/blogs_2019/02/tsp_180221-191.jpg?itok=SZDEJ2Bq" alt="" /></a>  </div>  
+          <div class="large-8 small-8 xsmall-8 columns"><h5> <a href="/spotlight/devolution/2019/02/firing-north-next-century">Firing up the North for the next century</a></h5><div class="article-author">By Matt Legg</div>
+</div>    </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+  
+</div> <!-- /.block -->
+				<!-- Hover popup ---->
+								<!-- Hover popup ---->
+            </div>
+          
+      		  <div class="secondary-content-box mpu article-mpu-2">
+            <div id='Unit3' class='sidebarad1'>
+                  <script type='text/javascript'>
+                    googletag.cmd.push(function() { googletag.display('Unit3'); });
+                  </script>
+                </div>
+                    </div>
+      
+       <!-- <div class="secondary-content-box desktop-banner mpu brexit-tracker">
+        Smartad # 4222: New Statesman Right Rail
+        <iframe WIDTH="300" HEIGHT="600" SCROLLING="NO" src="//www.dianomi.com/smartads.epl?id=4222"  style="width: 300px; height: 600px; border: none; overflow: hidden;"></iframe>
+        </div>--->
+
+          
+          <!-- .sidebar-mpu -->
+
+          <div class="secondary-content-box you-may-have-missed">
+                        
+            
+            </div>
+
+            
+                <div class="secondary-content-box mpu article-mpu-3">
+                                <!-- <div id='Unit4' class='sidebarad1'>
+                  <script type='text/javascript'>
+                    googletag.cmd.push(function() { googletag.display('Unit4'); });
+                  </script>
+                </div> -->
+                                </div>
+                                                   <!-- <div class="secondary-content-box">-->
+                                  <!--</div>-->
+                  </aside>
+        <!-- #sidebar-first -->
+      </div>
+      <!--   <div class="secondary-content-box desktop-banner mpu elevator-banners clearfix">
+                <div class="double-mpu-placeholder">
+
+
+Newstatesman/Homepage
+<div id='div-160-600-sky'>
+<script type='text/javascript'>
+googletag.display('div-160-600-sky');
+</script>
+</div>
+
+                </div>
+              </div>-->
+
+    </div>
+	<div class="subscribe-toggle"></div>
+    <div class="sidebar-toggle">More</div>
+  </div>
+  <div class="subscription-promotion"> </div>
+  <!-- .subscription-promotion -->
+  <footer class="article-footer">
+    <div class="row comments-area">
+
+     <!-- <ul class="share-buttons article-footer-sharers">
+        <li class='facebook-button st_facebook_hcount'><a target="_blank" href= > <span class="stButton"> <span class="stMainServices st-facebook-counter">&nbsp;</span> <span class="stArrow"><span class="stBubble_hcount">
+                    </span></span></span> </a></li>
+        <li class='twitter-button st_twitter_hcount'><a target="_blank" href= > <span class="stButton"> <span class="stMainServices st-twitter-counter">&nbsp;</span> <span class="stArrow"><span class="stBubble_hcount">
+                    </span></span></span></a> </li>
+        <li class='reddit-button st_reddit_hcount' ><a target="_blank" href= > <span class="stButton"> <span class="reddit-button st_reddit_hcount"> &nbsp;</span> <span class="stArrow"><span class="stBubble_hcount">
+                    </span></span></span></a> </li>
+        <li class="email-button st_email_hcount"><a href="mailto:type email address here?subject= &body=&#32;&#32;" title="Email to a friend/colleague"> <span class="stButton"> <span class="stMainServices st-mail-counter">&nbsp;</span> <span class="stArrow"><span class="stBubble_hcount"></span></span></span></a></li>
+              </ul> -->
+    </div>
+    <!-- .comments-area -->
+  </footer>
+  
+
+
+
+
+<div class='row'>
+
+<div class='secondary-content-box related-articles'><h4 class='scb-heading'>Related articles</h4>
+
+
+  <div class="view view-related-block view-id-related_block view-display-id-block_2 view-dom-id-d45692361b3ccbed22012e8fa45c9edf">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul class="row article-list horizontal-article-list">          <li class="large-4 columns">  
+  <div class="row">                        <div class="large-4 small-4 xsmall-4 columns">
+                  <div class="article-image">
+                   <a href="/culture/nature/2019/01/talk-me-what-are-new-signals-space-and-why-do-they-matter"><img typeof="foaf:Image" src="https://www.newstatesman.com/sites/default/files/styles/thumb_360_203/public/blogs_2019/01/gettyimages-56317085.jpg?itok=Xepy5EY4" alt="The Crab Nebula, shows the six-light-year-wide expanding remnant of a star&#039;s supernova explosion as released December 2, 2005. " title="The Crab Nebula, shows the six-light-year-wide expanding remnant of a star&#039;s supernova explosion as released December 2, 2005. " /></a>
+                  </div>
+                </div>
+                <div class="large-8 small-8 xsmall-8 columns">
+                  <h5><a href="/culture/nature/2019/01/talk-me-what-are-new-signals-space-and-why-do-they-matter">Talk to me: what are the new signals from space and why do they matter?</a> </h5>
+                </div>
+           </div></li>
+          <li class="large-4 columns">  
+  <div class="row">                        <div class="large-4 small-4 xsmall-4 columns">
+                  <div class="article-image">
+                   <a href="/science-tech/space/2018/10/james-murdoch-could-become-tesla-chair-and-it-will-make-us-miss-elon-musk"><img typeof="foaf:Image" src="https://www.newstatesman.com/sites/default/files/styles/thumb_360_203/public/blogs_2018/10/gettyimages-545164330.jpg?itok=bWcG8t8D" alt="" /></a>
+                  </div>
+                </div>
+                <div class="large-8 small-8 xsmall-8 columns">
+                  <h5><a href="/science-tech/space/2018/10/james-murdoch-could-become-tesla-chair-and-it-will-make-us-miss-elon-musk">James Murdoch could become Tesla chair – and it will make us miss Elon Musk</a> </h5>
+                </div>
+           </div></li>
+          <li class="large-4 columns">  
+  <div class="row">                        <div class="large-4 small-4 xsmall-4 columns">
+                  <div class="article-image">
+                   <a href="/science-tech/space/2018/08/what-if-same-force-created-civilisation-thing-most-likely-destroy-it"><img typeof="foaf:Image" src="https://www.newstatesman.com/sites/default/files/styles/thumb_360_203/public/blogs_2018/08/gettyimages-897886020.jpg?itok=7xzEgPGv" alt="Where is everybody?" title="Where is everybody?" /></a>
+                  </div>
+                </div>
+                <div class="large-8 small-8 xsmall-8 columns">
+                  <h5><a href="/science-tech/space/2018/08/what-if-same-force-created-civilisation-thing-most-likely-destroy-it">What if the same force that created civilisation is the thing most likely to destroy it?</a> </h5>
+                </div>
+           </div></li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div></div>
+
+   <div class='secondary-content-box related-articles1'>
+
+</div>
+  </div><div class='clear'></div><div class='row'>
+ <div class='secondary-content-box related-articles dianomi-sponsored'>   <!-- Dianomi Tags -->
+<iframe width="100%" height="690" scrolling="NO" src="//www.dianomi.com/smartads.epl?id=3402" style="width: 100%; border: none; overflow: hidden;"></iframe>
+</div>
+
+</div>
+
+
+
+  <!--</article>-->
+  <div class="bottom-leaderboard-section desktop-banner">
+
+      <div id='Unit5'>
+        <script type='text/javascript'>
+          googletag.cmd.push(function() { googletag.display('Unit5'); });
+        </script>
+      </div>
+
+  </div>
+
+<!--<div class="secondary-content-box promo-box modal" id="popup" style="display: none;">-->
+<div class="secondary-content-box promo-box modal" id="popup" style="display: none;">
+
+  <div class="row">
+        <div class="large-4 small-4 columns magazine-cover"> <a href="https://subscribe.newstatesman.com/?utm_source=smallpopup&utm_medium=bookimg&utm_campaign=whywesleep&utm_term=subscribe"><img src="/sites/default/files/ns_book_offer_feb_18.jpg" alt="New Statesman Magazine" style="max-width:100%"></a> </div>
+        <div class="large-8 small-8 columns magazine-details">
+            <h3 class="heading-label">Subscription offer</h3>
+                  <h4>12 issues for £12 <small>+ FREE book</small></h4>
+                        <div class="cta buy-cta"><a href="https://subscribe.newstatesman.com/?utm_source=smallpopup&utm_medium=bookimg&utm_campaign=whywesleep&utm_term=subscribe">LEARN MORE</a></div>
+          </div>
+  </div>
+  <div class="close-toggle"><b>Close</b> <span>This week&#8217;s magazine</span></div>
+</div>
+
+
+ 
+<!--</div>-->
+</div>
+ <!-- /.region -->
+
+
+ 
+ </div>
+    </div>
+    <!-- .content
+  </div>
+</div> -->
+
+<footer id="nsfooter">
+  <div class="row">
+    <div class="footerwrapper">
+      <div class="large-2 columns footerlogo">
+        <img src="https://newstatesman.com/sites/all/themes/creative-responsive-theme/images/newstatesman_logo@2x.png" alt="">
+      </div>
+      <div class="large-10 columns">
+        <div class="link-footer">
+        <div class="region region-footer">
+  <div id="block-menu-menu-footer-menu" class="block block-menu">
+
+      
+  <div class="content">
+    <ul class="menu"><li class="first leaf"><a href="http://www.newstatesmanmedia.com/">NS Media Group</a></li>
+<li class="leaf"><a href="/about-new-statesman">About us</a></li>
+<li class="leaf"><a href="/advertising">Advertising</a></li>
+<li class="leaf"><a href="/contact-new-statesman">Contact us</a></li>
+<li class="leaf"><a href="/history">History</a></li>
+<li class="leaf"><a href="/privacy-policy">Privacy policy</a></li>
+<li class="leaf"><a href="/page/rss">RSS feeds</a></li>
+<li class="leaf"><a href="https://subscribe.newstatesman.com/">Subscribe</a></li>
+<li class="leaf"><a href="/terms-and-conditions">T&amp;Cs</a></li>
+<li class="last leaf"><a href="http://www.newstatesman.com/page/supplements">Supplements</a></li>
+</ul>  </div>
+  
+</div> <!-- /.block -->
+<div id="block-block-51" class="block block-block">
+
+      
+  <div class="content">
+     <!-- Start of Leadin Embed --><script type="text/javascript" src="//js.leadin.com/js/v1/2099850.js" id="LeadinEmbed-2099850" crossorigin="use-credentials" async="" defer="defer"></script><!-- End of Leadin Embed -->  </div>
+  
+</div> <!-- /.block -->
+</div>
+ <!-- /.region -->
+ 
+        </div>
+      </div>
+    </div>
+    <div class="large-12">
+      <div class="sociallist">
+          <ul>
+            <li><a href="https://www.twitter.com/newstatesman"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="https://en-gb.facebook.com/NewStatesman/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</footer><!--<script type="text/javascript">
+var url=window.location.href;
+window.onscroll = function(){
+ var scrurl = window.location.href;
+ if(scrurl === url){
+
+ }
+ else{
+   var adds = document.getElementsByClassName('scrolling-content');
+   for(var i=0;i<adds.length;i++){
+    var elems = adds[i].getElementsByClassName('ayl_v_ckr_b');
+
+    //console.log(elems);
+    for(var j=0;j<elems.length;j++)
+       {
+     if(j==0){}
+     else
+           {
+      elems[j].outerHTML='';
+      delete elems[j];
+           }
+       }
+   }
+ }
+}
+</script>--->
+  
+
+  
+    
+      <script src="/sites/all/themes/creative-responsive-theme/js/foundation.min.js"></script>
+      <script>
+          //$(document).foundation();
+      </script>
+      <script type="text/javascript" src="/sites/all/themes/creative-responsive-theme/js/ux.js"></script>
+      
+      <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script type="text/javascript" src="/sites/all/themes/creative-responsive-theme/js/slick/slick.min.js"></script>
+      <script type="text/javascript" src="/sites/all/themes/creative-responsive-theme/js/jquery.sticky.js"></script>
+	 <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>---->
+	     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      heightStyle: "content"
+    });
+  } );
+  </script>
+	  
+	
+<script type="text/javascript" src="/sites/all/modules/paywall/assets/js/ev-custom.min.js?v=1.5.4"></script><script type="text/javascript" src="/sites/all/modules/paywall/assets/js/ev-ui.js"></script><script type="text/javascript">
+                // alert("loaded");
+                var params = '{"articleId": "311996", "category": "Science & Tech,Space", "tags": "", "author": "Sanjana Varghese", "section": "blogs", "site": "US"}';
+                TNS_Data.articleId = 311996;
+                // articleId = 311996;
+                // console.log("req: "+ params);
+                // TNS_Data.auth.ev_emit( params );
+                // console.log(TNS_Data.auth.ev_queue);
+                // console.log(TNS_Data.auth.handleMeteringSuccess);
+                EV.Em.authorize(params, TNS_Data.auth.handleMeteringSuccess, TNS_Data.auth.handleMeteringError);
+
+        </script>
+
+      
+
+  <script type="text/javascript" src="/sites/all/themes/creative-responsive-theme/js/inArticleBanners.js"></script>
+ 
+
+<!-- Infinite Ad Serving -->
+
+
+<script type='text/javascript'>
+
+jQuery(document).ready(function() {
+
+var first1=0;
+var first2=0;
+var first3=0;
+var first4=0;
+var first5=0;
+var first6=0;
+
+var article_type=0
+
+//alert(article_type);
+
+    //Load the second article onlym when you get to the bottom of the first.
+    jQuery(window).bind('scroll', function() {
+
+
+
+
+function detectmob() { 
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
+}
+
+
+
+detectmobvalue=detectmob();     
+
+
+      if(detectmobvalue===false && article_type==0){
+
+        // Desktop Ads
+
+       //alert ('not mobile'); 
+
+       // console.log('not mobile');
+      
+        jQuery('.article-mpu-1').each(function() {
+
+            var count2 = jQuery("#container").find('.article-mpu-1').length;
+            count2 -= 1;
+
+
+            for (b = 0; b <= count2; b++) {
+
+                var element = jQuery(".article-mpu-1").eq(b);
+
+                var topOfElement = element.offset().top;
+                var bottomOfElement = element.offset().top + element.outerHeight(true);
+
+                var scrollTopPosition = jQuery(window).scrollTop() + $(window).height();
+                var windowScrollTop = jQuery(window).scrollTop()
+
+                if (windowScrollTop > topOfElement && windowScrollTop < bottomOfElement) {
+                    // Element is partially visible (above viewable area)
+                     console.log("article-mpu-1"+(b)+" is partially visible (above viewable area)");
+
+
+                    if (element.hasClass("Added") || b == 0) {
+                        if(b == 0){
+                           jQuery(".article-mpu-1").eq(1).empty();
+                           jQuery(".article-mpu-1").eq(1).removeClass("Added");
+
+
+                           jQuery(".article-mpu-2").eq(1).empty();
+                           jQuery(".article-mpu-2").eq(1).removeClass("Added");
+
+                           jQuery(".article-mpu-3").eq(1).empty();
+                           jQuery(".article-mpu-3").eq(1).removeClass("Added");
+
+                           jQuery(".article-mpu-4").eq(1).empty();
+                           jQuery(".article-mpu-4").eq(1).removeClass("Added");
+
+
+                           jQuery(".article-mpu-5").eq(1).empty();
+                           jQuery(".article-mpu-5").eq(1).removeClass("Added");
+
+                           jQuery(".video-inread").eq(1).empty();
+                           jQuery(".video-inread").eq(1).removeClass("Added");
+
+
+                           jQuery(".bottom-leaderboard-section").eq(1).empty();
+                           jQuery(".bottom-leaderboard-section").eq(1).removeClass("Added");
+
+
+
+                        }
+
+
+                    } else {
+                        
+                        console.log('removed all ads');
+ 
+                          // Cleaning ads 
+                         jQuery(".article-mpu-1").empty();
+                         jQuery(".article-mpu-1").removeClass("Added");
+
+                         jQuery(".article-mpu-2").empty();
+                         jQuery(".article-mpu-2").removeClass("Added");
+
+                         jQuery(".article-mpu-3").empty();
+                         jQuery(".article-mpu-3").removeClass("Added");
+
+                         jQuery(".article-mpu-5").empty();
+                         jQuery(".article-mpu-5").removeClass("Added");
+
+
+                        jQuery(".video-inread").empty();
+                        jQuery(".video-inread").removeClass("Added");
+
+                        jQuery(".bottom-leaderboard-section").empty();
+                        jQuery(".bottom-leaderboard-section").removeClass("Added");
+
+                        
+                        
+                        element.append("<div id='Unit2'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit2'); });<\/script><\/div>");
+                        jQuery(".article-mpu-2").last().append("<div id='Unit3'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit3'); });<\/script><\/div>");
+                        jQuery(".article-mpu-3").last().append("<div id='Unit4'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit4'); });<\/script><\/div>");
+                        jQuery(".article-mpu-5").last().append("<div id='Unit6'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit6'); });<\/script><\/div>");
+                        jQuery(".video-inread").last().append("<div id='1x3'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x3'); });<\/script><\/div>");
+                        jQuery(".bottom-leaderboard-section").last().append("<div id='Unit5'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit5'); });<\/script><\/div>");
+                        if (b != 0) {
+
+                            streamamp.refreshBids("Unit2");
+                            streamamp.refreshBids("Unit3");
+                            streamamp.refreshBids("Unit4");
+                            streamamp.refreshBids("Unit5");
+                            streamamp.refreshBids("Unit6");
+                            streamamp.refreshBids("1x3");
+
+                            
+
+                        }
+                        //first1++;
+
+
+                        element.addClass("Added");
+                        jQuery(".article-mpu-2").last().addClass("Added");
+                        jQuery(".article-mpu-3").last().addClass("Added");
+                        jQuery(".article-mpu-5").last().addClass("Added");
+                        jQuery(".video-inread").last().addClass("Added");
+                        jQuery(".bottom-leaderboard-section").last().addClass("Added");
+
+                         // alert('added all ads');
+                         console.log('article-mpu-2'+b); 
+                         console.log('added all ads'); 
+                    }
+
+                
+
+                } else if (windowScrollTop > bottomOfElement && windowScrollTop > topOfElement) {
+                    // Element is hidden (above viewable area)
+                    //   console.log("Element is hidden (above viewable area)");
+
+                    //jQuery(".article-mpu-1").eq(b).empty();
+                   // jQuery(".article-mpu-1").eq(b).removeClass("Added");
+
+                } else if (scrollTopPosition < topOfElement && scrollTopPosition < bottomOfElement) {
+                    // Element is hidden (below viewable area)
+                    // console.log("Element is hidden (below viewable area)");
+
+                   // jQuery(".article-mpu-1").eq(b).empty();
+                   // jQuery(".article-mpu-1").eq(b).removeClass("Added");
+
+
+                } else if (scrollTopPosition < bottomOfElement && scrollTopPosition > topOfElement) {
+                    // Element is partially visible (below viewable area)
+                    //console.log("Element is partially visible (below viewable area)");
+
+                } else {
+                    // Element is completely visible
+                    //console.log("Element is completely visible");
+
+                     console.log("article-mpu-1"+(b)+" is completely visible (above viewable area)");
+
+                    if (element.hasClass("Added") || b == 0) {
+                        if(b == 0){
+                           jQuery(".article-mpu-1").eq(1).empty();
+                           jQuery(".article-mpu-1").eq(1).removeClass("Added");
+
+
+                           jQuery(".article-mpu-2").eq(1).empty();
+                           jQuery(".article-mpu-2").eq(1).removeClass("Added");
+
+                           jQuery(".article-mpu-3").eq(1).empty();
+                           jQuery(".article-mpu-3").eq(1).removeClass("Added");
+
+                           jQuery(".article-mpu-4").eq(1).empty();
+                           jQuery(".article-mpu-4").eq(1).removeClass("Added");
+
+
+                           jQuery(".article-mpu-5").eq(1).empty();
+                           jQuery(".article-mpu-5").eq(1).removeClass("Added");
+
+                           jQuery(".video-inread").eq(1).empty();
+                           jQuery(".video-inread").eq(1).removeClass("Added");
+
+
+                           jQuery(".bottom-leaderboard-section").eq(1).empty();
+                           jQuery(".bottom-leaderboard-section").eq(1).removeClass("Added");
+
+                            
+
+                        }
+
+
+                    } else {
+                        
+                        console.log('removed all ads');
+ 
+                          // Cleaning ads 
+                         jQuery(".article-mpu-1").empty();
+                         jQuery(".article-mpu-1").removeClass("Added");
+
+                         jQuery(".article-mpu-2").empty();
+                         jQuery(".article-mpu-2").removeClass("Added");
+
+                         jQuery(".article-mpu-3").empty();
+                         jQuery(".article-mpu-3").removeClass("Added");
+
+                         jQuery(".article-mpu-5").empty();
+                         jQuery(".article-mpu-5").removeClass("Added");
+
+
+                        jQuery(".video-inread").empty();
+                        jQuery(".video-inread").removeClass("Added");
+
+                        jQuery(".bottom-leaderboard-section").empty();
+                        jQuery(".bottom-leaderboard-section").removeClass("Added");
+
+                        
+                        
+                        element.append("<div id='Unit2'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit2'); });<\/script><\/div>");
+                        jQuery(".article-mpu-2").last().append("<div id='Unit3'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit3'); });<\/script><\/div>");
+                        jQuery(".article-mpu-3").last().append("<div id='Unit4'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit4'); });<\/script><\/div>");
+                        jQuery(".article-mpu-5").last().append("<div id='Unit6'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit6'); });<\/script><\/div>");
+                        jQuery(".video-inread").last().append("<div id='1x3'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x3'); });<\/script><\/div>");
+                        jQuery(".bottom-leaderboard-section").eq(b).append("<div id='Unit5'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit5'); });<\/script><\/div>");
+                        if (b != 0) {
+
+                            streamamp.refreshBids("Unit2");
+                            streamamp.refreshBids("Unit3");
+                            streamamp.refreshBids("Unit4");
+                            streamamp.refreshBids("Unit5");
+                            streamamp.refreshBids("Unit6");
+                            streamamp.refreshBids("1x3");
+
+                            
+
+                        }
+                        //first1++;
+
+
+                        element.addClass("Added");
+                        jQuery(".article-mpu-2").last().addClass("Added");
+                        jQuery(".article-mpu-3").last().addClass("Added");
+                        jQuery(".article-mpu-5").last().addClass("Added");
+                        jQuery(".video-inread").last().addClass("Added");
+                        jQuery(".bottom-leaderboard-section").last().addClass("Added");
+
+                         // alert('added all ads');
+                         console.log('article-mpu-2'+b); 
+                         console.log('added all ads'); 
+                    }
+
+
+                }
+
+            }
+
+        });
+
+    
+
+
+  }else if(detectmobvalue===true){
+
+
+////////alert('mobile');
+ console.log('mobile');
+/// Mobile ADs
+
+  jQuery('.title.inf_class').each(function() {
+
+            var count2 = jQuery(".html").find('.title.inf_class').length;
+            count2 -= 1;
+
+            console.log(count2);
+
+
+            for (b = 0; b <= count2; b++) {
+
+                var element = jQuery(".title.inf_class").eq(b);
+
+                var topOfElement = element.offset().top;
+                var bottomOfElement = element.offset().top + element.outerHeight(true);
+
+                var scrollTopPosition = jQuery(window).scrollTop() + $(window).height();
+                var windowScrollTop = jQuery(window).scrollTop()
+
+                if (windowScrollTop > topOfElement && windowScrollTop < bottomOfElement) {
+                    // Element is partially visible (above viewable area) 
+                     console.log("Element is partially visible (above viewable area)");
+
+
+                      if (jQuery(".article-mpu-5").last().hasClass("Added")  || b == 0) {
+                        if(b == 0){
+
+                          //streamamp.refreshBids("Unit2");
+
+                           jQuery(".article-mpu-5").eq(1).empty();
+                           jQuery(".article-mpu-5").eq(1).removeClass("Added");
+
+
+                           jQuery(".article-mpu-51").eq(1).empty();
+                           jQuery(".article-mpu-51").eq(1).removeClass("Added");
+
+                           jQuery(".article-mpu-52").eq(1).empty();
+                           jQuery(".article-mpu-52").eq(1).removeClass("Added");
+
+                           jQuery(".video-inread").eq(1).empty();
+                           jQuery(".video-inread").eq(1).removeClass("Added");
+
+
+                           jQuery(".video-inread1").eq(1).empty();
+                           jQuery(".video-inread1").eq(1).removeClass("Added");
+
+                           jQuery(".video-inread2").eq(1).empty();
+                           jQuery(".video-inread2").eq(1).removeClass("Added");
+
+
+                           jQuery(".bottom-leaderboard-section").eq(1).empty();
+                           jQuery(".bottom-leaderboard-section").eq(1).removeClass("Added");
+
+                        }
+
+
+                   } else {
+
+                        
+                        console.log('removed all ads');
+
+                          // Cleaning ads  
+                        jQuery(".article-mpu-5").empty();
+                        jQuery(".article-mpu-5").removeClass("Added");
+
+                        jQuery(".article-mpu-51").empty();
+                        jQuery(".article-mpu-51").removeClass("Added");
+
+                        jQuery(".article-mpu-52").empty();
+                        jQuery(".article-mpu-52").removeClass("Added");
+
+                        jQuery(".video-inread").empty();
+                        jQuery(".video-inread").removeClass("Added");
+
+                        jQuery(".video-inread1").empty();
+                        jQuery(".video-inread1").removeClass("Added");
+
+
+                        jQuery(".video-inread2").empty();
+                        jQuery(".video-inread2").removeClass("Added");
+
+                        jQuery(".bottom-leaderboard-section").empty();
+                        jQuery(".bottom-leaderboard-section").removeClass("Added");
+
+
+                        
+                        jQuery(".article-mpu-5").last().append("<div id='Unit3' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit3'); });<\/script><\/div>");
+                        jQuery(".article-mpu-51").last().append("<div id='Unit4' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit4'); });<\/script><\/div>");
+                        jQuery(".article-mpu-52").last().append("<div id='Unit2' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit2'); });<\/script><\/div>");
+                        jQuery(".video-inread").last().append("<div id='1x3'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x3'); });<\/script><\/div>");
+                        jQuery(".video-inread1").eq(b).append("<div id='1x1'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x1'); });<\/script><\/div>");
+                        jQuery(".video-inread2").eq(b).append("<div id='1x2'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x2'); });<\/script><\/div>");
+                        jQuery(".bottom-leaderboard-section").last().append("<div id='Unit5'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit5'); });<\/script><\/div>");
+
+
+                       if (b != 0) {
+
+                            streamamp.refreshBids("Unit2");
+                            streamamp.refreshBids("Unit3");
+                            streamamp.refreshBids("Unit4");
+                            streamamp.refreshBids("1x3");
+                            streamamp.refreshBids("1x2");
+                            streamamp.refreshBids("1x1");
+                            streamamp.refreshBids("Unit5");
+
+                        }
+                     
+
+
+                        jQuery(".article-mpu-5").last().addClass("Added");
+                        jQuery(".article-mpu-51").last().addClass("Added");
+                        jQuery(".article-mpu-52").last().addClass("Added");
+                        jQuery(".video-inread").last().addClass("Added");
+                        jQuery(".video-inread1").last().addClass("Added");
+                        jQuery(".video-inread2").last().addClass("Added");
+                        jQuery(".bottom-leaderboard-section").last().addClass("Added");
+
+                         // alert('added all ads');
+                          console.log('added all ads'); 
+                    }
+
+                
+
+                } else if (windowScrollTop > bottomOfElement && windowScrollTop > topOfElement) {
+                    // Element is hidden (above viewable area)
+                    //   console.log("Element is hidden (above viewable area)");
+
+                    //jQuery(".article-mpu-1").eq(b).empty();
+                   // jQuery(".article-mpu-1").eq(b).removeClass("Added");
+
+                } else if (scrollTopPosition < topOfElement && scrollTopPosition < bottomOfElement) {
+                    // Element is hidden (below viewable area)
+                    // console.log("Element is hidden (below viewable area)");
+
+                   // jQuery(".article-mpu-1").eq(b).empty();
+                   // jQuery(".article-mpu-1").eq(b).removeClass("Added");
+
+
+                } else if (scrollTopPosition < bottomOfElement && scrollTopPosition > topOfElement) {
+                    // Element is partially visible (below viewable area)
+                    //console.log("Element is partially visible (below viewable area)");
+
+                } else {
+                	
+                    // Element is completely visible
+                    console.log("Element is completely visible");
+
+                      if (jQuery(".article-mpu-5").last().hasClass("Added") || b == 0) {
+                        if(b == 0){
+
+
+                           jQuery(".article-mpu-5").eq(1).empty();
+                           jQuery(".article-mpu-5").eq(1).removeClass("Added");
+
+
+                           jQuery(".article-mpu-51").eq(1).empty();
+                           jQuery(".article-mpu-51").eq(1).removeClass("Added");
+
+                           jQuery(".article-mpu-52").eq(1).empty();
+                           jQuery(".article-mpu-52").eq(1).removeClass("Added");
+
+                           jQuery(".video-inread").eq(1).empty();
+                           jQuery(".video-inread").eq(1).removeClass("Added");
+
+
+                           jQuery(".video-inread1").eq(1).empty();
+                           jQuery(".video-inread1").eq(1).removeClass("Added");
+
+                           jQuery(".video-inread2").eq(1).empty();
+                           jQuery(".video-inread2").eq(1).removeClass("Added");
+
+
+                           jQuery(".bottom-leaderboard-section").eq(1).empty();
+                           jQuery(".bottom-leaderboard-section").eq(1).removeClass("Added");
+
+                        }
+
+
+                    } else { 
+
+                        
+                        console.log('removed all ads');
+
+                          // Cleaning ads  
+                        jQuery(".article-mpu-5").empty();
+                        jQuery(".article-mpu-5").removeClass("Added");
+
+                        jQuery(".article-mpu-51").empty();
+                        jQuery(".article-mpu-51").removeClass("Added");
+
+                        jQuery(".article-mpu-52").empty();
+                        jQuery(".article-mpu-52").removeClass("Added");
+
+                        jQuery(".video-inread").empty();
+                        jQuery(".video-inread").removeClass("Added");
+
+                        jQuery(".video-inread1").empty();
+                        jQuery(".video-inread1").removeClass("Added");
+
+
+                        jQuery(".video-inread2").empty();
+                        jQuery(".video-inread2").removeClass("Added");
+
+                        jQuery(".bottom-leaderboard-section").empty();
+                        jQuery(".bottom-leaderboard-section").removeClass("Added");
+
+
+                        
+                        jQuery(".article-mpu-5").last().append("<div id='Unit3' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit3'); });<\/script><\/div>");
+                        jQuery(".article-mpu-51").last().append("<div id='Unit4' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit4'); });<\/script><\/div>");
+                        jQuery(".article-mpu-52").last().append("<div id='Unit2' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit2'); });<\/script><\/div>");
+                        jQuery(".video-inread").last().append("<div id='1x3'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x3'); });<\/script><\/div>");
+                        jQuery(".video-inread1").eq(b).append("<div id='1x1'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x1'); });<\/script><\/div>");
+                        jQuery(".video-inread2").eq(b).append("<div id='1x2'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x2'); });<\/script><\/div>");
+                        jQuery(".bottom-leaderboard-section").last().append("<div id='Unit5'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit5'); });<\/script><\/div>");
+
+
+                       if (b != 0) {
+
+                            streamamp.refreshBids("Unit2");
+                            streamamp.refreshBids("Unit3");
+                            streamamp.refreshBids("Unit4");
+                            streamamp.refreshBids("1x3");
+                            streamamp.refreshBids("1x2");
+                            streamamp.refreshBids("1x1");
+                            streamamp.refreshBids("Unit5");
+
+                        }
+                     
+
+
+                        jQuery(".article-mpu-5").last().addClass("Added");
+                        jQuery(".article-mpu-51").last().addClass("Added");
+                        jQuery(".article-mpu-52").last().addClass("Added");
+                        jQuery(".video-inread").last().addClass("Added");
+                        jQuery(".video-inread1").last().addClass("Added");
+                        jQuery(".video-inread2").last().addClass("Added");
+                        jQuery(".bottom-leaderboard-section").last().addClass("Added");
+
+                         // alert('added all ads');
+                          console.log('added all ads'); 
+                    }
+                }
+
+            }
+
+        });
+
+
+  }else if(detectmobvalue===false && article_type==1){
+
+
+      //alert('long read');
+      console.log("long read");
+
+
+        jQuery('.title.inf_class').each(function() {
+
+            var count2 = jQuery(".html").find('.title.inf_class').length;
+            count2 -= 1;
+
+            console.log(count2);
+
+
+            for (b = 0; b <= count2; b++) {
+
+                var element = jQuery(".title.inf_class").eq(b);
+
+                var topOfElement = element.offset().top;
+                var bottomOfElement = element.offset().top + element.outerHeight(true);
+
+                var scrollTopPosition = jQuery(window).scrollTop() + $(window).height();
+                var windowScrollTop = jQuery(window).scrollTop()
+
+                if (windowScrollTop > topOfElement && windowScrollTop < bottomOfElement) {
+                    // Element is partially visible (above viewable area)
+                     console.log("Element is partially visible (above viewable area)");
+
+
+                      if (jQuery(".article-mpu-5").eq(b).hasClass("Added") || jQuery(".article-mpu-51").eq(b).hasClass("Added")  || b == 0) {
+                        if(b == 0){
+                           jQuery(".article-mpu-5").eq(1).empty();
+                           jQuery(".article-mpu-5").eq(1).removeClass("Added");
+
+
+                           jQuery(".article-mpu-51").eq(1).empty();
+                           jQuery(".article-mpu-51").eq(1).removeClass("Added");
+
+                           jQuery(".article-mpu-52").eq(1).empty();
+                           jQuery(".article-mpu-52").eq(1).removeClass("Added");
+
+                           jQuery(".video-inread").eq(1).empty();
+                           jQuery(".video-inread").eq(1).removeClass("Added");
+
+
+                           jQuery(".video-inread1").eq(1).empty();
+                           jQuery(".video-inread1").eq(1).removeClass("Added");
+
+                           jQuery(".video-inread2").eq(1).empty();
+                           jQuery(".video-inread2").eq(1).removeClass("Added");
+
+
+                           jQuery(".bottom-leaderboard-section").eq(1).empty();
+                           jQuery(".bottom-leaderboard-section").eq(1).removeClass("Added");
+
+                        }
+
+
+                    } else {
+
+                        
+                        console.log('removed all ads');
+
+                          // Cleaning ads  
+                        jQuery(".article-mpu-5").empty();
+                        jQuery(".article-mpu-5").removeClass("Added");
+
+                        jQuery(".article-mpu-51").empty();
+                        jQuery(".article-mpu-51").removeClass("Added");
+
+                        jQuery(".article-mpu-52").empty();
+                        jQuery(".article-mpu-52").removeClass("Added");
+
+                        jQuery(".video-inread").empty();
+                        jQuery(".video-inread").removeClass("Added");
+
+                        jQuery(".video-inread1").empty();
+                        jQuery(".video-inread1").removeClass("Added");
+
+
+                        jQuery(".video-inread2").empty();
+                        jQuery(".video-inread2").removeClass("Added");
+
+                        jQuery(".bottom-leaderboard-section").empty();
+                        jQuery(".bottom-leaderboard-section").removeClass("Added");
+
+
+                        
+                        jQuery(".article-mpu-5").eq(b).append("<div id='Unit2' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit2'); });<\/script><\/div>");
+                        jQuery(".article-mpu-51").eq(b).append("<div id='Unit3' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit3'); });<\/script><\/div>");
+                        jQuery(".article-mpu-52").eq(b).append("<div id='Unit4' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit4'); });<\/script><\/div>");
+                        jQuery(".video-inread").eq(b).append("<div id='1x3'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x3'); });<\/script><\/div>");
+                        jQuery(".video-inread1").eq(b).append("<div id='1x1'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x1'); });<\/script><\/div>");
+                        jQuery(".video-inread2").eq(b).append("<div id='1x2'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x2'); });<\/script><\/div>");
+                        jQuery(".bottom-leaderboard-section").eq(b).append("<div id='Unit5'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit5'); });<\/script><\/div>");
+
+
+                       if (b != 0) {
+
+                            streamamp.refreshBids("Unit2");
+                            streamamp.refreshBids("Unit3");
+                            streamamp.refreshBids("Unit4");
+                            streamamp.refreshBids("1x3");
+                            streamamp.refreshBids("1x2");
+                            streamamp.refreshBids("1x1");
+                            streamamp.refreshBids("Unit5");
+
+                        }
+                     
+
+
+                        jQuery(".article-mpu-5").eq(b).addClass("Added");
+                        jQuery(".article-mpu-51").eq(b).addClass("Added");
+                        jQuery(".article-mpu-52").eq(b).addClass("Added");
+                        jQuery(".video-inread").eq(b).addClass("Added");
+                        jQuery(".video-inread1").eq(b).addClass("Added");
+                        jQuery(".video-inread2").eq(b).addClass("Added");
+                        jQuery(".bottom-leaderboard-section").eq(b).addClass("Added");
+
+                         // alert('added all ads');
+                          console.log('added all ads'); 
+                    }
+
+                
+
+                } else if (windowScrollTop > bottomOfElement && windowScrollTop > topOfElement) {
+                    // Element is hidden (above viewable area)
+                    //   console.log("Element is hidden (above viewable area)");
+
+                    //jQuery(".article-mpu-1").eq(b).empty();
+                   // jQuery(".article-mpu-1").eq(b).removeClass("Added");
+
+                } else if (scrollTopPosition < topOfElement && scrollTopPosition < bottomOfElement) {
+                    // Element is hidden (below viewable area)
+                    // console.log("Element is hidden (below viewable area)");
+
+                   // jQuery(".article-mpu-1").eq(b).empty();
+                   // jQuery(".article-mpu-1").eq(b).removeClass("Added");
+
+
+                } else if (scrollTopPosition < bottomOfElement && scrollTopPosition > topOfElement) {
+                    // Element is partially visible (below viewable area)
+                    //console.log("Element is partially visible (below viewable area)");
+
+                } else {
+                    // Element is completely visible
+                    console.log("Element is completely visible");
+
+                      if (jQuery(".article-mpu-5").eq(b).hasClass("Added") || jQuery(".article-mpu-51").eq(b).hasClass("Added")  || b == 0) {
+                        if(b == 0){
+                           jQuery(".article-mpu-5").eq(1).empty();
+                           jQuery(".article-mpu-5").eq(1).removeClass("Added");
+
+
+                           jQuery(".article-mpu-51").eq(1).empty();
+                           jQuery(".article-mpu-51").eq(1).removeClass("Added");
+
+                           jQuery(".article-mpu-52").eq(1).empty();
+                           jQuery(".article-mpu-52").eq(1).removeClass("Added");
+
+                           jQuery(".video-inread").eq(1).empty();
+                           jQuery(".video-inread").eq(1).removeClass("Added");
+
+
+                           jQuery(".video-inread1").eq(1).empty();
+                           jQuery(".video-inread1").eq(1).removeClass("Added");
+
+                           jQuery(".video-inread2").eq(1).empty();
+                           jQuery(".video-inread2").eq(1).removeClass("Added");
+
+
+                           jQuery(".bottom-leaderboard-section").eq(1).empty();
+                           jQuery(".bottom-leaderboard-section").eq(1).removeClass("Added");
+
+                        }
+
+
+                    } else {
+
+                        
+                        console.log('removed all ads');
+
+                          // Cleaning ads  
+                        jQuery(".article-mpu-5").empty();
+                        jQuery(".article-mpu-5").removeClass("Added");
+
+                        jQuery(".article-mpu-51").empty();
+                        jQuery(".article-mpu-51").removeClass("Added");
+
+                        jQuery(".article-mpu-52").empty();
+                        jQuery(".article-mpu-52").removeClass("Added");
+
+                        jQuery(".video-inread").empty();
+                        jQuery(".video-inread").removeClass("Added");
+
+                        jQuery(".video-inread1").empty();
+                        jQuery(".video-inread1").removeClass("Added");
+
+
+                        jQuery(".video-inread2").empty();
+                        jQuery(".video-inread2").removeClass("Added");
+
+                        jQuery(".bottom-leaderboard-section").empty();
+                        jQuery(".bottom-leaderboard-section").removeClass("Added");
+
+
+                        
+                        jQuery(".article-mpu-5").eq(b).append("<div id='Unit2' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit2'); });<\/script><\/div>");
+                        jQuery(".article-mpu-51").eq(b).append("<div id='Unit3' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit3'); });<\/script><\/div>");
+                        jQuery(".article-mpu-52").eq(b).append("<div id='Unit4' class='sidebarad" + b + "'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit4'); });<\/script><\/div>");
+                        jQuery(".video-inread").eq(b).append("<div id='1x3'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x3'); });<\/script><\/div>");
+                        jQuery(".video-inread1").eq(b).append("<div id='1x1'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x1'); });<\/script><\/div>");
+                        jQuery(".video-inread2").eq(b).append("<div id='1x2'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('1x2'); });<\/script><\/div>");
+                        jQuery(".bottom-leaderboard-section").eq(b).append("<div id='Unit5'><script type='text/javascript'>googletag.cmd.push(function() { googletag.display('Unit5'); });<\/script><\/div>");
+
+
+                       if (b != 0) {
+
+                            streamamp.refreshBids("Unit2");
+                            streamamp.refreshBids("Unit3");
+                            streamamp.refreshBids("Unit4");
+                            streamamp.refreshBids("1x3");
+                            streamamp.refreshBids("1x2");
+                            streamamp.refreshBids("1x1");
+                            streamamp.refreshBids("Unit5");
+
+                        } 
+                     
+
+
+                        jQuery(".article-mpu-5").eq(b).addClass("Added");
+                        jQuery(".article-mpu-51").eq(b).addClass("Added");
+                        jQuery(".article-mpu-52").eq(b).addClass("Added");
+                        jQuery(".video-inread").eq(b).addClass("Added");
+                        jQuery(".video-inread1").eq(b).addClass("Added");
+                        jQuery(".video-inread2").eq(b).addClass("Added");
+                        jQuery(".bottom-leaderboard-section").eq(b).addClass("Added");
+
+                         // alert('added all ads');
+                          console.log('added all ads');  
+                    }
+                }
+
+            }
+ 
+        });
+
+  }
+
+ 
+
+
+    });
+});
+
+
+
+</script><script type="text/javascript">
+$(".homepage_sticky").sticky({ topSpacing: 100 });
+</script>
+
+
+
+<script type="text/javascript">
+  $('.header-promotion').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+    });
+
+ jQuery(document).ready(function(){
+		//setTimeout( function(){ 
+		
+			var current_height = $('.view-display-id-homepagesponsored').position();
+			if(current_height!=undefined){
+			//$('.sponsored-hover-2017').show();
+			$('.sponsored-hover-2017').css("top",current_height.top);
+			$('.joyride').css("top",current_height.top);
+			$('.joyride').css("bottom","auto");
+			}
+		/* Code for sending Sponsered article to GA on hover -- NNAS-2 */
+						
+			//jQuery(".sidebar-sponsored-article").hover(function(){
+			jQuery(".sidebar-sponsored-article-2017").hover(function(){
+			
+			
+			
+			// jQuery(".page-node .view-display-id-homepagesponsored:hover .sponsored-hover-2017").toggle();
+			// ga('send', 'pageview', match);
+			});
+      // var pageURL = $(location).attr("href");
+            // alert(pageURL);
+      if(window.location.href.indexOf("/2017/") > -1) {
+		//if(window.location.href=="https://www.newstatesman.com/politics/brexit/2017/11/leader-brexit-betrayal"){
+		// if(window.location.href == "https://np-ind-new-statesman.pantheonsite.io/politics/brexit/2017/11/leader-brexit-betrayal") {
+        $(".view-display-id-homepagesponsored").on("mouseover",function(){
+		var current_height = $(this).position();
+          $('.sponsored-hover-2017').show();
+		  $('.sponsored-hover-2017').css("top",current_height.top);
+		  $('.joyride').css("top",current_height.top);
+		  $('.joyride').css("bottom","auto");
+		  var match = $(this).find('div:first a').attr('href');
+		  console.log(match);
+		  // ga('send', 'pageview', match);
+		  ga('send', 'pageview', "https://www.newstatesman.com"+match);
+        });
+		 $(".view-display-id-homepagesponsored").on("mouseleave",function(){
+		var current_height = $(this).position();
+		
+		          //$('.sponsored-hover-2017').delay(100000).hide();
+		          $('.sponsored-hover-2017').delay(4000).fadeOut();
+		  // $('.sponsored-hover-2017').css("top",current_height.top);
+		  // $('.joyride').css("top",current_height.top);
+        });
+		
+      }
+			
+	/* Code end for sending Sponsered article to GA on hover -- NNAS-2 */
+ jQuery('.supplements-thumb p img').removeAttr('style');   
+   jQuery('.supplements-thumb p img').each(function(){
+      jQuery(this).removeAttr('width');
+      jQuery(this).removeAttr('height');      
+   });   
+ });
+  
+</script>
+
+
+
+<!-- Google Code for Remarketing Tag -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 975790991;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/975790991/?value=0&guid=ON&script=0"/>
+</div>
+
+</noscript>
+
+
+
+<!-- Google Code for Remarketing Tag end -->
+
+
+
+
+
+<!-- Ad-blocker -->
+
+<script src="/sites/all/themes/creative-responsive-theme/js/blockadblock.js"></script>
+
+<!-- Ad blocker content -->
+
+				
+				<!--<div class="donate" id="donate">
+					<div id="donate-close" class="donate-close"> X </div>
+				  
+															<br>
+					 
+						<div class="cta-link donate-link">
+							<a id="nothanks-link" href="#" style="text-decoration: none; padding: 10px; background:black;">No Thanks</a>&nbsp; &nbsp;&nbsp;&nbsp;
+							<a href="" style="text-decoration: none; padding: 10px;" target="_blank" id="gotofeedback"></a>
+						</div>
+						<br/><br/>
+									</div>-->
+				<div class="donate-toggle" id="donate-toggle" style="display:none;">
+					Close   ASD
+				</div>
+	
+
+<!-- Ad blocker content end-->
+
+<script>
+// $(function() {
+  if (!getCookie('donation')) {
+        $("#donate").show();
+        
+    }else{
+        $("#donate").hide();      
+        
+    }
+  
+$("#donate-close").click(function(){
+   // checkCookie();
+      //if(chek === true){
+        $("#donate").hide();
+      //}        
+        
+    });
+	
+$("#nothanks-link, #gotofeedback").click(function(){
+        checkCookie();
+        $("#donate").hide();
+
+    });
+
+//intiate the donation cookie
+function setCookie() {
+    var expdate = new Date ();
+      expdate.setTime (expdate.getTime() + (1 * 24 * 60 * 60 * 1000));
+      var expires = "expires="+expdate.toUTCString();
+      document.cookie="donation=Initiated ;"+expires+";path=/";
+      //window.location.href="https://subscribe.newstatesman.com/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+//check if the user has payed and dontion cookie is set to payed
+function checkCookie() {
+  var expdate = new Date ();
+      expdate.setTime (expdate.getTime() + (1 * 24 * 60 * 60 * 1000));
+      var expires = "expires="+expdate.toUTCString();
+    var donate123 = getCookie("donation");
+    if (donate123 == "Initiated") {      
+        document.getElementById("donate").style.display="none";
+        document.getElementById("donate").style.display="none";
+        document.body.style.overflow = "visible";
+        document.cookie="donation=Payed ; path=/ ; expires = " + expires ;       
+    } else {
+          setCookie();
+        }    
+    }
+
+// });	
+
+
+// function hideDonationPopup() {
+//     var expdate = new Date ();
+//       expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000));
+//       document.cookie="donationPopup=hide; path=/; expires = " + expdate ; 
+// }
+
+// $('.donate-toggle').click(function(e) { 
+
+// if(e.target.id!="donate123")
+// { 
+    // document.getElementById("donate123").style.display="none";
+    // document.getElementById("donate-toggle123").style.display="none";
+    // document.body.style.overflow = "visible";
+    // hideDonationPopup();
+  // }
+ // else{
+  //  e.stopPropagation();
+ // }
+//});
+
+// $('.donate-close').click(function(e) { 
+
+// if(e.target.id!="donate123")
+// { 
+    // document.getElementById("donate123").style.display="none";
+    // document.getElementById("donate-toggle123").style.display="none";
+    // document.body.style.overflow = "visible";
+    // hideDonationPopup();
+  // }
+ // else{
+  //  e.stopPropagation();
+ // }
+//});
+
+//for addressing donation complains.this function will set the cookie so that the donation popup is not showed for 60 days
+// function setDonationComplainCookie() {
+    // var expdate = new Date ();
+      // expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000 * 60));
+      // document.cookie="donationPopup=Complain; path=/ ; expires = " + expdate ;  
+
+// }
+//for addressing donation complains of subscribers.this function will set the cookie so that the donation popup is never again showed
+// function setDonationSubscriberCookie() {
+    // var expdate = new Date ();
+      // expdate.setTime (expdate.getTime() + (24 * 60 * 60 * 1000 * 6000));
+      // document.cookie="donationPopup=Subscriber; path=/ ; expires = " + expdate ; 
+
+// }
+
+</script>
+
+
+<!--<script src="http://imakewebthings.github.com/jquery-waypoints/waypoints.min.js" type="text/javascript"></script>--->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
+<script type="text/javascript">
+$(function() {   
+    $('#leaderslot2').waypoint(function() {
+      var PathName  = window.location.pathname;
+
+      alert(PathName);
+      ga('send', 'event', 'AdCount', PathName+' leaderslot2 view count', { "nonInteraction": 1 });
+        
+     }, {
+       offset: '100%'
+     });
+
+   $('.secondary-content-box.mpu.article-mpu-1').waypoint(function() {
+      var PathName  = window.location.pathname;
+      ga('send', 'event', 'AdCount', PathName+' article-mpu-1 view count', { "nonInteraction": 1 });
+     }, {
+       offset: '100%'
+     });
+
+   $('.secondary-content-box.mpu.article-mpu-2').waypoint(function() {
+      var PathName  = window.location.pathname;
+      ga('send', 'event', 'AdCount', PathName+' article-mpu-2 view count', { "nonInteraction": 1 });
+     }, {
+       offset: '100%'
+     });
+
+
+   $('.secondary-content-box.mpu.article-mpu-3').waypoint(function() {
+     var PathName  = window.location.pathname;
+     ga('send', 'event', 'AdCount', PathName+' article-mpu-3 view count', { "nonInteraction": 1 });
+
+     }, {
+       offset: '100%'
+     });
+
+
+});
+
+</script>
+
+<script>
+    var donate = getCookie("donation");
+    var donationPopup = getCookie("donationPopup");
+  // IP whitelist array 
+  //var ar = ["86.178.61.94"];
+  //var ar = ["115.119.113.194", "10.8.23.3","5.148.40.2","86.178.61.94"];
+  var ip = "10.223.192.155";
+  var ip_new = "91.200.82.73";
+  //alert(ip_new)
+  var temp_disable = true;
+  
+    /*if ( temp_disable || (donate == "Payed") || (donationPopup == "hide") || (donationPopup == "Complain")|| (donationPopup == "Subscriber"))
+        {           
+            document.getElementById("donate1234").style.display="none";
+            document.getElementById("donate-toggle12345").style.display="none";
+            document.body.style.overflow = "visible";
+        }*/
+    /* Code for IP whitelisting */
+    //else if(jQuery.inArray("86.178.61.94",ar) == 0){
+    //else if(jQuery.inArray("86.178.61.94",ar) == 0 || jQuery.inArray("115.119.113.194",ar) == 0 || jQuery.inArray("5.148.40.2",ar) == 0){
+     if(ip == "86.178.61.94" || ip_new == "86.178.61.94"){
+      //alert("In Array");
+      $( "#donate" ).css( "display","none" );
+      $( "#donate-toggle" ).css( "display","none" );
+      $( "body" ).css( "overflow","visible" );
+    }
+    /* Code end for IP whitelisting */
+        else
+        {
+            //alert("Inelse");
+			// document.getElementById('donate').style.display = 'block';
+            // document.getElementById('donate-toggle').style.display = 'block';
+            // document.body.style.overflow = "hidden";
+        }
+  
+    //alert('ad blocker detected');
+    jQuery(".ad-blocker-wraper").css("ad-blocker-detected");
+
+    function adBlockDetected() {
+      /* Event fired if adBlock is Detected */    
+    }
+    function adBlockNotDetected() {
+        //alert('No Adblocker found');
+    }
+
+    if (typeof blockAdBlock === 'undefined') {
+        adBlockDetected();
+    } else {
+        blockAdBlock.setOption({debug: true});
+        blockAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+    }
+
+    function checkAgain() {
+
+        // setTimeout 300ms for the recheck is visible when you click on the button
+        setTimeout(function () {
+            if (typeof blockAdBlock === 'undefined') {
+                adBlockDetected();
+            } else {
+                blockAdBlock.onDetected(adBlockDetected).onNotDetected(adBlockNotDetected);
+                blockAdBlock.check();
+            }
+        }, 300);
+    }
+</script>
+
+
+<!-- Ad-blocker end -->
+
+
+
+
+<script>
+(function(){
+	
+  var test = document.createElement('div'); 
+  test.innerHTML = '&nbsp;';
+  test.className = 'adsbox';
+  document.body.appendChild(test);
+  window.setTimeout(function() {
+    if (test.offsetHeight === 0) {
+      ga('set', 'dimension1', 'Ads Blocked');
+      ga('send', 'event', 'AdSense', 'Ads blocked', { "nonInteraction": 1 });
+    }else{
+      ga('set', 'dimension1', 'Ads Displaying');
+      ga('send', 'event', 'AdSense', 'Ads not blocked', { "nonInteraction": 1 });
+    }
+    test.remove();
+  }, 100);
+})();
+</script>
+
+<script type="text/javascript">
+ jQuery(document).ready(function() {
+	 
+			
+jQuery("ul.event-months li").hover(
+  
+ function() {
+    jQuery(this).addClass("showevents");
+  
+  }, function() {
+    jQuery(this).removeClass("showevents");
+  }
+  
+);
+
+	// jQuery(".sidebar-sponsored-article").hover(function(){
+	// console.log("you made onover");
+	// jQuery(".sponsored-hover").toggle();
+	// });
+	
+	
+
+	
+			
+	});			
+ 
+ 
+ jQuery(".close-toggle").click(function(){ 
+	console.log("you made click");
+	jQuery(".joyride").toggle();
+	//jQuery(".joyride").hide();
+	});
+ </script>
+
+ 
+<!--Pardot Onboarding Tracking code-->
+ 
+
+<script type="text/javascript">
+piAId = '510131';
+piCId = '6800';
+piHostname = 'pi.pardot.com';
+
+(function() {
+	function async_load(){
+		var s = document.createElement('script'); s.type = 'text/javascript';
+		s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+		var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+	}
+	if(window.attachEvent) { window.attachEvent('onload', async_load); }
+	else { window.addEventListener('load', async_load, false); }
+})();
+</script>
+
+
+
+<!--Pardot Onboarding Tracking code-->
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d4f02fb7e7","applicationID":"14767184","transactionName":"ZwEDZxBQXkZTAUJfVl5LIFAWWF9bHQxZUlxvFABUB25GXFcV","queueTime":0,"applicationTime":562,"atts":"S0YAEVhKTUg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

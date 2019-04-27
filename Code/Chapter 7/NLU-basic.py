@@ -6,17 +6,15 @@ from watson_developer_cloud.natural_language_understanding_v1 \
 natural_language_understanding = NaturalLanguageUnderstandingV1(
         version = '2018-11-16',
         iam_apikey = '32AZltOLLv83-m0n-UqU28YFUTeOpPKOGj2Q7DeNtvej',
-        url = 'https://gateway.watsonplatform.net/natural-language-understanding/api'
-    )
+        url = 'https://gateway.watsonplatform.net/natural-language-understanding/api')
 
 response = natural_language_understanding.analyze(
         url = "https://en.wikipedia.org/wiki/SpaceX",
         features=Features(
-            entities=EntitiesOptions(limit=100, mentions=True, sentiment=True, emotion=True)
-       )
+            entities=EntitiesOptions(limit=100, mentions=True, sentiment=True, emotion=True))
     ).get_result()
 
-print
+print()
 print("=======================================================================")
-print
+print()
 print(json.dumps(response, indent=2))

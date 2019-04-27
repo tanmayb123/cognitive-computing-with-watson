@@ -20,8 +20,7 @@ print("Understanding document at: " + resource_link)
 natural_language_understanding = NaturalLanguageUnderstandingV1(
         version = '2018-11-16',
         iam_apikey = API_key,
-        url = 'https://gateway.watsonplatform.net/natural-language-understanding/api'
-    )
+        url = 'https://gateway.watsonplatform.net/natural-language-understanding/api')
 
 response = natural_language_understanding.analyze(
         url=resource_link,
@@ -34,14 +33,12 @@ response = natural_language_understanding.analyze(
             metadata=MetadataOptions(),
             relations=RelationsOptions(),
             semantic_roles=SemanticRolesOptions(limit=50, keywords=True, entities=True),
-            sentiment=SentimentOptions(['Rockets', 'Space', 'Mars'])
-        ),
-        return_analyzed_text=True
-    ).get_result()
+            sentiment=SentimentOptions(['Rockets', 'Space', 'Mars'])),
+        return_analyzed_text=True).get_result()
 
-print
+print()
 print("=======================================================================")
-print
+print()
 
 if response.get("warnings") != None:
     for i in range(len(response["warnings"])):

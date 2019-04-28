@@ -1,6 +1,6 @@
 import json
-from watson_developer_cloud import NaturalLanguageUnderstandingV1
-from watson_developer_cloud.natural_language_understanding_v1 \
+from ibm_watson import NaturalLanguageUnderstandingV1
+from ibm_watson.natural_language_understanding_v1 \
     import Features, CategoriesOptions, ConceptsOptions, EntitiesOptions
 
 natural_language_understanding = NaturalLanguageUnderstandingV1(
@@ -11,10 +11,11 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
 response = natural_language_understanding.analyze(
         url = "https://en.wikipedia.org/wiki/SpaceX",
         features=Features(
-            entities=EntitiesOptions(limit=100, mentions=True, sentiment=True, emotion=True))
+            entities=EntitiesOptions(limit=100, mentions=True, sentiment=True, emotion=True)
+       )
     ).get_result()
 
-print()
+print
 print("=======================================================================")
-print()
+print
 print(json.dumps(response, indent=2))

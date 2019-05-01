@@ -1,4 +1,4 @@
-import urllib.request
+import urllib
 import json
 from ibm_watson import NaturalLanguageUnderstandingV1
 from ibm_watson.natural_language_understanding_v1 import *

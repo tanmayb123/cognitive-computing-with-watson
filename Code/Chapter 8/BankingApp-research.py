@@ -19,9 +19,9 @@ def BankBot(research_URL=None):
     
     # Create session with the Watson Assistant
     assistant = ibm_watson.AssistantV1(
-            iam_apikey='PrLJLVykZG4V-FQrADLiZG91oOKcJN0UZWEUAo0HxW8Q',
+            iam_apikey='3qON5M4RnQqj8BR0bI_ydf-gH1mTFgvQxVUmfihMYO3E',
             version='2018-09-20')
-    workspace_id = "beb32203-c974-46dd-997f-f91f0968acf5"
+    workspace_id = "97cfd400-cfe8-4710-bbf4-b4b0845f6187"
     
     # Get a session to NLU
     nluSession = initNLU()
@@ -138,7 +138,7 @@ def BankBot(research_URL=None):
                 article_text = getText(research_URL, session=nluSession)
                 print(article_text)
                 # Enumerate the enties found in the document
-                entities = preprocessEntities(getEntities(research_URL, limit=5, session=nluSession))
+                entities = preprocessEntities(getEntities(research_URL, limit=10, session=nluSession))
                 if len(entities) > 0:
                     speakAndPrint("The following entities were found:")
                     text_line = ''
@@ -149,7 +149,7 @@ def BankBot(research_URL=None):
                         text_line = text_line + entities[len(entities)-1].get("text")
                     speakAndPrint(text_line)
                 else:
-                    speakAndPrint("No entites were mentioned in the document")
+                    speakAndPrint("No entities were mentioned in the document")
                 # Enumerate the document categories
                 categories = getCategories(research_URL, session=nluSession)
                 speakAndPrint("The article spoke about these concepts:")

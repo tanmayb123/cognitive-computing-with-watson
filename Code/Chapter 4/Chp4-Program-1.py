@@ -12,9 +12,10 @@ def textSpeech():
     # Use Text to Speech to create mp3 file
     with open('glad_to_be_here.mp3', 'wb') as audio_file:
         audio_file.write(
-                ext_to_speech.synthesize(
+                text_to_speech.synthesize(
                     'I\'m so glad you\'re here with me today.',
                     'audio/mp3',
                     'en-US_MichaelVoice'
                 ).get_result().content)
 
+    

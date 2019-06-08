@@ -1,5 +1,5 @@
 import json
-from watson_developer_cloud import VisualRecognitionV3
+from ibm_watson import VisualRecognitionV3
 from PIL import Image
 
 def crop_face(original_image, face_name, watson_face_location):

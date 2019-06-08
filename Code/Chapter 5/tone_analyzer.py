@@ -1,4 +1,4 @@
-from watson_developer_cloud import ToneAnalyzerV3
+from ibm_watson import ToneAnalyzerV3
 
 service = ToneAnalyzerV3(iam_apikey="NaPe5R7RNR-e38IRR1jT5k_ictmN1SalGmt64aTC5-f8", version="2017-09-21")
 

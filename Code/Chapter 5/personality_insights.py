@@ -1,4 +1,4 @@
-from watson_developer_cloud import PersonalityInsightsV3
+from ibm_watson import PersonalityInsightsV3
 
 personality_insights = PersonalityInsightsV3(version='2017-10-13', iam_apikey='W73kz6O3XR1pkIQVn2RYbrrtIU2o0IvNYuqiMICwSwro')
 
